@@ -1,4 +1,4 @@
-"use client"
+
 import React from 'react'
 import s from './style.module.css'
 import data from '@/data/info.json'
@@ -10,16 +10,23 @@ export default function OutStandingProducts() {
         ...data.givral.combo,
         ...data.brodard.combo
     ]
-    const shuffledArray = shuffleArray([...list_combo]); // Trộn mảng và giữ nguyên mảng gốc
-    const results = shuffledArray.slice(0, 9); // Lấy ra 6 phần tử đầu tiên
- 
+    const shuffledArray = shuffleArray([...list_combo]);
+    const results = shuffledArray.slice(0, 9);
+
     return (
         <section className={s.outstandingproducts_section}>
             <div className='container'>
                 <h2>SẢN PHẨM NỔI BẬT</h2>
-                {results.map((combo, index) => (
-                <button key={index}>{combo.name}</button> // Giả sử combo có thuộc tính 'name'
-                ))}
+                <ul>
+                    {results.map((combo, index) => (
+                        <li key={index}>
+                            <div className={s.item}>
+                                <h3>{combo.name}</h3>
+                                <a href={`/combo/${combo.brand}/${combo.slug}`}>Chi tiết</a>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </section>
     )

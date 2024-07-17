@@ -1,5 +1,5 @@
 "use client"
-// app/combo-trung-thu/[slug]/page.tsx
+// app/combo/[slug]/page.tsx
 import postsData from '../../../data/info.json';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -34,7 +34,7 @@ interface IParams {
   slug: string;
   name: string;
 }
-var slugify = require('slugify')
+
 export default function PostPage({ params }: { params: IParams }) {
   const { slug } = params;
   let isList = false
@@ -50,7 +50,7 @@ export default function PostPage({ params }: { params: IParams }) {
   const addProduct = useCounterStore((state) => state.addProduct);
   const handleAddProduct = (e:any) => {
     const val = e.target.value
-    console.log(val)
+  
     setNewProduct({ ...newProduct, id: Number(val) })
     addProduct(newProduct);
   };
@@ -61,10 +61,9 @@ export default function PostPage({ params }: { params: IParams }) {
           <h2> Danh sách </h2>
           <ul>
             {singleItems.map((item: any,index) => {
-              let url = slugify(item.name, { lower: true })
               return (
                 <li key={item.id} >
-                  <Link href={`/banh-trung-thu/${slug[0]}/${url}`}>{item.name} - {item.price}₫</Link>
+                  <Link href={`/banh-tu-chon/${slug[0]}/${item.slug}`}>{item.name} - {item.price}₫</Link>
                   <div>
                     <button data-link="" value={`${index}`} onClick={(e) => handleAddProduct(e)}>Mua</button>
                   </div>
@@ -72,19 +71,18 @@ export default function PostPage({ params }: { params: IParams }) {
               )
             })}
           </ul>
-          <Link href="/banh-trung-thu">Trở về danh sách</Link>
+          <Link href="/banh-tu-chon">Trở về danh sách</Link>
         </>
       ) : (
         <>
           <h2> Chi tiết bánh </h2>
           {singleItems.map((item: any) => {
-            let url = slugify(item.name, { lower: true })
-            if (slug[1] === url) {
+            if (slug[1] === item.slug) {
               return (
                 <li key={item.id}>
                   {item.name}
                   <br />
-                  {url}
+                  {item.slug} === {slug[1]}
                   <br />
                   {item.info}
                   <br />
@@ -94,7 +92,7 @@ export default function PostPage({ params }: { params: IParams }) {
             }
           })}
 
-          <Link href="/banh-trung-thu/givral/danh-sach-banh">Trở về danh sách</Link>
+          <Link href="/banh-tu-chon/givral/danh-sach-banh">Trở về danh sách</Link>
         </>
       )}
     </main>

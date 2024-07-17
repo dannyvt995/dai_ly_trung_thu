@@ -18,8 +18,8 @@ export default function Footer() {
         <div>
           <h3>Sản phẩm</h3>
           <ul>
-            <li><Link href={'/san-pham/banh-trung-thu-givral'}>Bánh Trung Thu Givral</Link></li>
-            <li><Link href={'/san-pham/banh-trung-thu-brodard'}>Bánh Trung Thu Brodard</Link></li>
+            <li><Link href={'/san-pham/banh-tu-chon-givral'}>Bánh Trung Thu Givral</Link></li>
+            <li><Link href={'/san-pham/banh-tu-chon-brodard'}>Bánh Trung Thu Brodard</Link></li>
           </ul>
         </div>
         <div>

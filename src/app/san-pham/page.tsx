@@ -6,8 +6,8 @@ export default function SanPham() {
   return (
     <main>
           <h1>Sản phẩm</h1>
-        <Link href={'/san-pham/banh-trung-thu-brodard'}>Hãng bánh Brodard</Link>
-        <Link href={'/san-pham/banh-trung-thu-givral'}>Hãng bánh Givral</Link> 
+        <Link href={'/san-pham/brodard'}>Hãng bánh Brodard</Link>
+        <Link href={'/san-pham/brodard'}>Hãng bánh Givral</Link> 
     </main>
   )
 }

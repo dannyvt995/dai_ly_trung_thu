@@ -16,7 +16,7 @@ export default function page({ }) {
     <main>
       <h2>Bánh Givral</h2>
       <Link
-        href={`/banh-trung-thu/givral/danh-sach-banh`}
+        href={`/banh-tu-chon/givral/danh-sach-banh`}
       >
         <span>
           btn giv
@@ -24,7 +24,7 @@ export default function page({ }) {
       </Link>
       <h2>Bánh Brodard</h2>
       <Link
-        href={`/banh-trung-thu/brodard/danh-sach-banh`}
+        href={`/banh-tu-chon/brodard/danh-sach-banh`}
       >
         <span>
           btn bro

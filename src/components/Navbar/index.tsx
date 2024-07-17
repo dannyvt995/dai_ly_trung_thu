@@ -13,8 +13,8 @@ export default function Navbar() {
           <ul className={s.list_menu_des}>
             <li><Link href={`${process.env.SITE_URL}/san-pham`}>Sản phẩm</Link></li>
             <li><Link href={`${process.env.SITE_URL}/gioi-thieu`}>Giới thiệu</Link></li>
-            <li><Link href={`${process.env.SITE_URL}/banh-trung-thu`}>Bánh trung thu tự chọn</Link></li>
-            <li><Link href={`${process.env.SITE_URL}/combo-trung-thu`}>Combo 2024</Link></li>
+            <li><Link href={`${process.env.SITE_URL}/banh-tu-chon`}>Bánh trung thu tự chọn</Link></li>
+            <li><Link href={`${process.env.SITE_URL}/combo`}>Combo 2024</Link></li>
             <li><Link href={`${process.env.SITE_URL}/bang-gia`}>Bảng giá</Link></li>
             <li><Link href={`${process.env.SITE_URL}/gio-hang`}>Giỏ hàng</Link></li>
             <li><Link href={`${process.env.SITE_URL}/lien-he`}>Liên hệ</Link></li>

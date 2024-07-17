@@ -14,7 +14,7 @@ export default function BannerPage() {
       <div className={`container ${s.btn_brand}`}>
      
           <div className={s.itemBrand}>
-            <Link href={'/san-pham/banh-trung-thu-brodard'}>
+            <Link href={'/san-pham/banh-tu-chon-brodard'}>
               <div>
                 <Image src="/brodard/logo.png" alt="banner" width={0} height={0} sizes='100vw' style={{ width: '100%', height: 'auto' }} />
                 <span>Hãng bánh Brodard</span>
@@ -22,7 +22,7 @@ export default function BannerPage() {
             </Link>
           </div>
           <div  className={s.itemBrand}>
-            <Link href={'/san-pham/banh-trung-thu-givral'}>
+            <Link href={'/san-pham/banh-tu-chon-givral'}>
               <div>
                 <Image src="/givral/logo.png" alt="banner" width={0} height={0} sizes='100vw' style={{ width: '100%', height: 'auto' }} />
                 <span>Hãng bánh Givral</span>
