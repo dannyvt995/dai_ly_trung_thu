@@ -1,7 +1,17 @@
 import React from 'react'
-
-export default function index() {
+import s from './style.module.css'
+import Link from 'next/link'
+export default function Widget() {
   return (
-    <div>index</div>
+    <section className={s.widget_section}>
+        <div className={s.left}>
+       
+            <a>SDT 0909090990</a>
+            <a>Zalo 09090990</a>
+        </div>
+        <div className={s.right}>
+            <button>scroll to top</button>
+        </div>
+    </section>
   )
 }

@@ -1,0 +1,6 @@
+.intro_section {
+    display:flex;
+}
+.content,.image {
+    width:50%;
+}

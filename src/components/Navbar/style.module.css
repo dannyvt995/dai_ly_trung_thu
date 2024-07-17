@@ -6,8 +6,16 @@
 
 .list_menu_des {
     display:flex;
+    list-style-type: none;
 }
 .list_menu_des a {
     padding: 1rem;
     display:block;
+}
+.deskop {
+    display:flex;
+    flex-direction: column;
+}
+.logo {
+    width:200px;
 }

@@ -1,0 +1,10 @@
+.footer_section {
+    background:blue;
+}
+.footer_section_wrapper {
+    display:flex;
+    justify-content: space-between;
+}
+.footer_section ul {
+    list-style-type:none;
+}

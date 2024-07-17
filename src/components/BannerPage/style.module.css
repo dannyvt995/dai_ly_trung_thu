@@ -1,0 +1,8 @@
+.btn_brand {
+    display:flex;
+    flex-direction: row;
+}
+.itemBrand {
+    width:200px;
+    border: 1px solid gray;
+}

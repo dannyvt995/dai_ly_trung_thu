@@ -74,15 +74,10 @@ export default function PostPage({ params }: { params: IParams }) {
           </ul>
           <Link href="/banh-trung-thu">Trở về danh sách</Link>
         </>
-
       ) : (
-
         <>
           <h2> Chi tiết bánh </h2>
-
           {singleItems.map((item: any) => {
-
-   
             let url = slugify(item.name, { lower: true })
             if (slug[1] === url) {
               return (
@@ -99,13 +94,9 @@ export default function PostPage({ params }: { params: IParams }) {
             }
           })}
 
-          { }
           <Link href="/banh-trung-thu/givral/danh-sach-banh">Trở về danh sách</Link>
         </>
-
       )}
-
-
     </main>
   );
 }

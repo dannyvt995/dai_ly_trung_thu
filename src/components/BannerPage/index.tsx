@@ -1,22 +1,37 @@
 "use client"
 import React from 'react'
-import { useCounterStore } from '@/providers/counter-store-provider'
+import s from './style.module.css'
+import Image from 'next/image'
+import Link from 'next/link'
+
 export default function BannerPage() {
-  const { count, incrementCount, decrementCount } = useCounterStore(
-    (state) => state,
-  )
+
   return (
-    <div>
-       <div>
-        Count: {count}
-        <hr />
-        <button type="button" onClick={() => void incrementCount()}>
-          Increment Count
-        </button>
-        <button type="button" onClick={() => void decrementCount()}>
-          Decrement Count
-        </button>
+    <section className={s.banner_section}>
+      <div className={s.banner_img}>
+        <Image src="/banner.png" alt="banner" width={0} height={0} sizes='100vw' style={{ width: '100%', height: 'auto' }} />
       </div>
-    </div>
+      <div className={`container ${s.btn_brand}`}>
+     
+          <div className={s.itemBrand}>
+            <Link href={'/san-pham/banh-trung-thu-brodard'}>
+              <div>
+                <Image src="/brodard/logo.png" alt="banner" width={0} height={0} sizes='100vw' style={{ width: '100%', height: 'auto' }} />
+                <span>Hãng bánh Brodard</span>
+              </div>
+            </Link>
+          </div>
+          <div  className={s.itemBrand}>
+            <Link href={'/san-pham/banh-trung-thu-givral'}>
+              <div>
+                <Image src="/givral/logo.png" alt="banner" width={0} height={0} sizes='100vw' style={{ width: '100%', height: 'auto' }} />
+                <span>Hãng bánh Givral</span>
+              </div>
+            </Link>
+           
+          </div>
+
+      </div>
+    </section>
   )
 }
