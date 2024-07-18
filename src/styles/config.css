@@ -24,7 +24,7 @@
 .item  .image {
     background: var(--green);
     width: 100%;
-    aspect-ratio: 1/.75;
+  
 }
 .item  a {
     display:block;
