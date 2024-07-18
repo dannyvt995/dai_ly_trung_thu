@@ -10,15 +10,27 @@ export const metadata: Metadata = {
 
 import postsData from '../../data/info.json';
 import Link from 'next/link';
+import SubBanner from '@/components/SubBanner';
 
 export default function page({ }) {
   return (
     <main>
-      <h2>Combo Givral</h2>
-      <Link href={`/combo/givral`}>Combo Givral</Link>
+      <SubBanner/>
+      <div className='container'>
+        <div className={s.list_brand}>
+          <div className={s.item}>
+            <h2>Combo Givral</h2>
+            <Link href={`/combo/givral`}>Combo Givral</Link>
+          </div>
 
-      <h2>Combo Brodard</h2>
-      <Link href={`/combo/brodard`}>Combo Brodard</Link>
+          <div className={s.item}>
+            <h2>Combo Brodard</h2>
+            <Link href={`/combo/brodard`}>Combo Brodard</Link>
+          </div>
+
+        </div>
+
+      </div>
 
     </main>
   )

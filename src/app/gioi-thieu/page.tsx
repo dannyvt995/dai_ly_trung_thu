@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <main>
-        <div>
+        <div className="container">
         Giới thiệu
 Bánh trung thu CQ MART
 Chuyên Phân Phối Các Loại Bánh Trung Thu Givral - Brodard - Kinh Đô - Như Lan- Bibica-Casahana- taithong 

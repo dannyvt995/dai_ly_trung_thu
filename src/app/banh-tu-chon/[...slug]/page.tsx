@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { useCounterStore } from '@/providers/counter-store-provider';
 import { useState } from 'react';
+import SubBanner from '@/components/SubBanner';
+import ImageLoad from '@/components/ImageLoad';
 
 interface ICombo {
   id: number;
@@ -56,44 +58,48 @@ export default function PostPage({ params }: { params: IParams }) {
   };
   return (
     <main>
+      <SubBanner/>
       {isList ? (
-        <>
-          <h2> Danh sách </h2>
-          <ul>
+        <div className='container'>
+          <h2>Danh sách {slug[0]}</h2>
+          <ul className='list_item'>
             {singleItems.map((item: any,index) => {
+              console.log(item)
               return (
-                <li key={item.id} >
-                  <Link href={`/banh-tu-chon/${slug[0]}/${item.slug}`}>{item.name} - {item.price}₫</Link>
-                  <div>
-                    <button data-link="" value={`${index}`} onClick={(e) => handleAddProduct(e)}>Mua</button>
-                  </div>
+                <li key={item.id} className='item'>
+                  <div className='image'> <ImageLoad src={item.img} alt={'he'}/></div>
+                  <h3 className='name'>{item.name}</h3>
+                  <Link href={`/banh-tu-chon/${slug[0]}/${item.slug}`}>Chi tiết</Link>
+               
                 </li>
               )
             })}
           </ul>
           <Link href="/banh-tu-chon">Trở về danh sách</Link>
-        </>
+        </div>
       ) : (
-        <>
-          <h2> Chi tiết bánh </h2>
+        <div className='container'>
+  
           {singleItems.map((item: any) => {
             if (slug[1] === item.slug) {
               return (
-                <li key={item.id}>
-                  {item.name}
+                <div >
+                  <ImageLoad src={item.img} alt={'he'}/>
+                          <h2>{item.name}</h2>
+                  
                   <br />
                   {item.slug} === {slug[1]}
                   <br />
                   {item.info}
                   <br />
                   {item.price}
-                </li>
+                </div>
               )
             }
           })}
 
           <Link href="/banh-tu-chon/givral/danh-sach-banh">Trở về danh sách</Link>
-        </>
+        </div>
       )}
     </main>
   );

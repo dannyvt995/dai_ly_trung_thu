@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import data from '@/data/info.json';
 import Link from 'next/link';
 import { Data } from '@/types/data_type';
+import SubBanner from '@/components/SubBanner';
+import ImageLoad from '@/components/ImageLoad';
 
 export const metadata: Metadata = {
     title: "",
@@ -26,26 +28,35 @@ export default function ComboBrand({ params }: { params: IParams }) {
 
         return (
             <main>
-                <h1>======== ID {post.id}</h1>
-                <p>======== NAME {post.name}</p>
-                <p>======== BODY {post.body}</p>
-                <Link href="/combo">Trở về danh sách</Link>
+                <SubBanner />
+                <div className='container'>
+                    <h1>======== ID {post.id}</h1>
+                    <p>======== NAME {post.name}</p>
+                    <p>======== BODY {post.body}</p>
+                    <Link href={`/combo/${slug[0]}`}>Trở về danh sách</Link>
+                </div>
             </main>
         )
     } else {
         const products = data[slug].combo;
         return (
             <main>
-                <h2>Danh sách combo {slug === 'givral' ? 'Givral' : 'Brodard'}</h2>
-                <ul>
-                    {products.map((product) => (
-                        <li key={product.id}>
-                            <Link href={`/combo/${slug}/${product.slug}`}>
-                                <span>{product.name}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                <SubBanner />
+                <div className='container'>
+                    <h2>Danh sách combo {slug === 'givral' ? 'Givral' : 'Brodard'}</h2>
+                    <ul className='list_item'>
+                        {products.map((product) => (
+                            <li key={product.id} className='item'>
+                            
+                                <div className='image'><ImageLoad src={product.img} alt={'he'}/></div>
+                                <h3 className='name'>{product.name}</h3>
+                                <Link href={`/combo/${slug}/${product.slug}`}>
+                                    Chi tiet61
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </main>
         );
     }

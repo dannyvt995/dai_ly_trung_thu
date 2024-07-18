@@ -3,6 +3,7 @@
         "name": "givral",
         "combo": [
             {
+                "img":"/item_combo.jpg",
                 "id": 0,
                 "brand": "givral",
                 "name": "Tết Đoàn Viên 1 (4 Bánh)",
@@ -12,6 +13,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 1,
                 "brand": "givral",
                 "name": "Tết Đoàn Viên 2 (4 Bánh)",
@@ -21,6 +23,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 2,
                 "brand": "givral",
                 "name": "Tết Đoàn Viên 3 (4 Bánh)",
@@ -30,6 +33,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 3,
                 "brand": "givral",
                 "name": "Combo Tâm Giao 3 (4 Bánh)",
@@ -39,6 +43,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 4,
                 "brand": "givral",
                 "name": "Combo Sum Vầy 1 (4 Bánh)",
@@ -48,6 +53,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 5,
                 "brand": "givral",
                 "name": "Combo Sum Vầy 2 (4 Bánh)",
@@ -57,6 +63,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 6,
                 "brand": "givral",
                 "name": "Combo Sum Vầy 3 (4 Bánh)",
@@ -66,6 +73,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 7,
                 "brand": "givral",
                 "name": "Combo Tâm Giao 1 (4 Bánh)",
@@ -75,6 +83,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 8,
                 "brand": "givral",
                 "name": "Combo Tâm Giao 2 (4 Bánh)",
@@ -84,6 +93,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 9,
                 "brand": "givral",
                 "name": "Combo Trăng Thanh 1 (4 Bánh)",
@@ -93,6 +103,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 10,
                 "brand": "givral",
                 "name": "Combo Thành Ý 1 (4 Bánh)",
@@ -102,6 +113,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 11,
                 "brand": "givral",
                 "name": "Combo Thành Ý 2 (4 Bánh)",
@@ -111,6 +123,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 12,
                 "brand": "givral",
                 "name": "Combo Trăng Thanh 2 (4 Bánh)",
@@ -120,6 +133,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 13,
                 "brand": "givral",
                 "name": "Combo Trăng Yêu Thương 1",
@@ -129,6 +143,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 14,
                 "brand": "givral",
                 "name": "Combo Trăng Yêu Thương 2",
@@ -138,6 +153,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 15,
                 "brand": "givral",
                 "name": "Combo Trăng Yêu Thương 3",
@@ -147,6 +163,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 16,
                 "brand": "givral",
                 "name": "Combo Như Ý (6 Bánh)",
@@ -156,6 +173,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 17,
                 "brand": "givral",
                 "name": "Combo Sắc Màu (4 Bánh)",
@@ -165,6 +183,7 @@
                 "codes": []
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 18,
                 "brand": "givral",
                 "name": "Combo Tình Thân",
@@ -177,6 +196,7 @@
         ,
         "single": [
             {
+                "img":"/item_single.jpg",
                 "id": 19,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral thập cẩm gà quay vi cá yến sào",
@@ -186,6 +206,7 @@
                 "slug": "banh-trung-thu-givral-thap-cam-ga-quay-vi-ca-yen-sao"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 20,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral thập cẩm gà quay vi cá đặc biệt",
@@ -195,6 +216,7 @@
                 "slug": "banh-trung-thu-givral-thap-cam-ga-quay-vi-ca-dac-biet"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 21,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral thập cẩm gà quay vi cá",
@@ -204,6 +226,7 @@
                 "slug": "banh-trung-thu-givral-thap-cam-ga-quay-vi-ca"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 22,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral thập cẩm gà quay",
@@ -213,6 +236,7 @@
                 "slug": "banh-trung-thu-givral-thap-cam-ga-quay"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 23,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral thập cẩm",
@@ -222,6 +246,7 @@
                 "slug": "banh-trung-thu-givral-thap-cam"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 24,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral thập cẩm ngũ nhân",
@@ -231,6 +256,7 @@
                 "slug": "banh-trung-thu-givral-thap-cam-ngu-nhan"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 25,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral thập cẩm gà quay bào ngư",
@@ -240,6 +266,7 @@
                 "slug": "banh-trung-thu-givral-thap-cam-ga-quay-bao-ngu"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 26,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Hạt Sen",
@@ -249,6 +276,7 @@
                 "slug": "banh-trung-thu-givral-hat-sen"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 27,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Đậu Xanh",
@@ -258,6 +286,7 @@
                 "slug": "banh-trung-thu-givral-dau-xanh"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 28,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral đậu xanh sầu riêng",
@@ -267,6 +296,7 @@
                 "slug": "banh-trung-thu-givral-dau-xanh-sau-rieng"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 29,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Dừa Hạt Dưa",
@@ -276,6 +306,7 @@
                 "slug": "banh-trung-thu-givral-dua-hat-dua"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 30,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Khoai môn",
@@ -285,6 +316,7 @@
                 "slug": "banh-trung-thu-givral-khoai-mon"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 31,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Trà xanh",
@@ -294,6 +326,7 @@
                 "slug": "banh-trung-thu-givral-tra-xanh"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 32,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Chocolate đậu phộng",
@@ -303,6 +336,7 @@
                 "slug": "banh-trung-thu-givral-chocolate-dau-phong"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 33,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Lá Dứa",
@@ -312,6 +346,7 @@
                 "slug": "banh-trung-thu-givral-la-dua"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 34,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Dừa Lá Dứa",
@@ -321,6 +356,7 @@
                 "slug": "banh-trung-thu-givral-dua-la-dua"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 35,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Chocolate - Cappucino",
@@ -330,6 +366,7 @@
                 "slug": "banh-trung-thu-givral-chocolate-cappucino"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 36,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Đậu Xanh 0 Trứng",
@@ -339,6 +376,7 @@
                 "slug": "banh-trung-thu-givral-dau-xanh-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 37,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Hạt Sen 0 trứng",
@@ -348,6 +386,7 @@
                 "slug": "banh-trung-thu-givral-hat-sen-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 38,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Đậu Đỏ 0 Trứng",
@@ -357,6 +396,7 @@
                 "slug": "banh-trung-thu-givral-dau-do-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 39,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Thập Cẩm Chay 0 Trứng",
@@ -366,6 +406,7 @@
                 "slug": "banh-trung-thu-givral-thap-cam-chay-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 40,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Dẻo Đậu Xanh 0 Trứng",
@@ -375,6 +416,7 @@
                 "slug": "banh-trung-thu-givral-deo-dau-xanh-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 41,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Dẻo Hạt Sen 0 Trứng",
@@ -384,6 +426,7 @@
                 "slug": "banh-trung-thu-givral-deo-hat-sen-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 42,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Dẻo Lá Dứa 0 Trứng",
@@ -393,6 +436,7 @@
                 "slug": "banh-trung-thu-givral-deo-la-dua-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 43,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Dẻo Trà xanh 0 Trứng",
@@ -402,6 +446,7 @@
                 "slug": "banh-trung-thu-givral-deo-tra-xanh-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 44,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Dẻo Khoai Môn 0 Trứng",
@@ -411,6 +456,7 @@
                 "slug": "banh-trung-thu-givral-deo-khoai-mon-0-trung"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 45,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Táo Đỏ",
@@ -420,6 +466,7 @@
                 "slug": "banh-trung-thu-givral-tao-do"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 46,
                 "brand": "givral",
                 "name": "Bánh trung thu Givral Dừa Sầu Riêng",
@@ -436,6 +483,7 @@
         "name": "brodard",
         "combo": [
             {
+                "img":"/item_combo.jpg",
                 "id": 0,
                 "brand": "brodard",
                 "name": "Hộp 4 bánh - Hương Sắc Bốn Mùa 1",
@@ -444,6 +492,7 @@
                 "price": 890000
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 1,
                 "brand": "brodard",
                 "name": "Hộp 4 bánh - Hương Sắc Bốn Mùa 2",
@@ -452,6 +501,7 @@
                 "price": 950000
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 2,
                 "brand": "brodard",
                 "name": "Hộp 4 bánh - Hương Sắc Bốn Mùa 3",
@@ -460,6 +510,7 @@
                 "price": 1070000
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 3,
                 "brand": "brodard",
                 "name": "Hộp 4 bánh - Hương Sắc Bốn Mùa 4",
@@ -468,6 +519,7 @@
                 "price": 1210000
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 4,
                 "brand": "brodard",
                 "name": "Hộp Vip - Non Sông Gấm Vóc Mật Ong",
@@ -476,6 +528,7 @@
                 "price": 3100000
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 5,
                 "brand": "brodard",
                 "name": "Hộp Vip - Non Sông Gấm Vóc Nhân Sâm",
@@ -484,6 +537,7 @@
                 "price": 3500000
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 6,
                 "brand": "brodard",
                 "name": "Hộp Vip - Non Sông Gấm Vóc Yến Sào",
@@ -492,6 +546,7 @@
                 "price": 6600000
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 7,
                 "brand": "brodard",
                 "name": "Hộp 6 bánh - Dạ Nguyệt Đoàn Viên 1",
@@ -500,6 +555,7 @@
                 "price": 1530000
             },
             {
+                "img":"/item_combo.jpg",
                 "id": 8,
                 "brand": "brodard",
                 "name": "Hộp 6 bánh - Dạ Nguyệt Đoàn Viên 2",
@@ -511,6 +567,7 @@
         ,
         "single": [
             {
+                "img":"/item_single.jpg",
                 "id": 9,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Thập Cẩm",
@@ -520,6 +577,7 @@
                 "slug": "banh-trung-thu-brodard-thap-cam"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 10,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Thập Cẩm Gà Quay",
@@ -529,6 +587,7 @@
                 "slug": "banh-trung-thu-brodard-thap-cam-ga-quay"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 11,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Tom Yum Hải Sản",
@@ -538,6 +597,7 @@
                 "slug": "banh-trung-thu-brodard-tom-yum-hai-san"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 12,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Hải Sản Xốt Bào Ngư",
@@ -547,6 +607,7 @@
                 "slug": "banh-trung-thu-brodard-hai-san-xot-bao-ngu"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 13,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Gà Quay Vi Cá",
@@ -556,6 +617,7 @@
                 "slug": "banh-trung-thu-brodard-ga-quay-vi-ca"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 14,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Sò Điệp Xốt XO",
@@ -565,6 +627,7 @@
                 "slug": "banh-trung-thu-brodard-so-diep-xot-xo"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 15,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Hạt Sen Trà Xanh Chay",
@@ -574,6 +637,7 @@
                 "slug": "banh-trung-thu-brodard-hat-sen-tra-xanh-chay"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 16,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Đậu Xanh Chay",
@@ -583,6 +647,7 @@
                 "slug": "banh-trung-thu-brodard-dau-xanh-chay"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 17,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Tiramisu",
@@ -592,6 +657,7 @@
                 "slug": "banh-trung-thu-brodard-tiramisu"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 18,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Hạnh Nhân Phô Mai Việt Quất Hoa Kỳ",
@@ -601,6 +667,7 @@
                 "slug": "banh-trung-thu-brodard-hanh-nhan-pho-mai-viet-quat-hoa-ky"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 19,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Khoai Môn",
@@ -610,6 +677,7 @@
                 "slug": "banh-trung-thu-brodard-khoai-mon"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 20,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Hạt Sen Lá Dứa Hạnh Nhân",
@@ -619,6 +687,7 @@
                 "slug": "banh-trung-thu-brodard-hat-sen-la-dua-hanh-nhan"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 21,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Đậu Xanh",
@@ -628,6 +697,7 @@
                 "slug": "banh-trung-thu-brodard-dau-xanh"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 22,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Yến Sào Táo Đỏ Ngũ Hạt",
@@ -637,6 +707,7 @@
                 "slug": "banh-trung-thu-brodard-yen-sao-tao-do-ngu-hat"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 23,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Sầu riêng 6 Ri",
@@ -646,6 +717,7 @@
                 "slug": "banh-trung-thu-brodard-sau-rieng-6-ri"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 24,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Mè Đen",
@@ -655,6 +727,7 @@
                 "slug": "banh-trung-thu-brodard-me-den"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 25,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Espresso Kim Sa Lava",
@@ -664,6 +737,7 @@
                 "slug": "banh-trung-thu-brodard-espresso-kim-sa-lava"
             },
             {
+                "img":"/item_single.jpg",
                 "id": 26,
                 "brand": "brodard",
                 "name": "Bánh trung thu Brodard Ô long Hạt Sen",

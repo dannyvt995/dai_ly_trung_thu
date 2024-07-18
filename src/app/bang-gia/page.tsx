@@ -10,9 +10,11 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <main>
-      <h1>Bảng giá</h1>
-      <Link href={'/bang-gia/bang-gia-banh-givral'} >Bảng giá bánh Givral</Link>
-      <Link href={'/bang-gia/bang-gia-banh-brodard'} >Bảng giá bánh Brodard</Link>
+      <div className='container'>
+        <h1>Bảng giá</h1>
+        <Link href={'/bang-gia/bang-gia-banh-givral'} >Bảng giá bánh Givral</Link>
+        <Link href={'/bang-gia/bang-gia-banh-brodard'} >Bảng giá bánh Brodard</Link>
+      </div>
     </main>
   )
 }

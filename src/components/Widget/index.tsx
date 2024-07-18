@@ -10,7 +10,7 @@ export default function Widget() {
             <a>Zalo 09090990</a>
         </div>
         <div className={s.right}>
-            <button>scroll to top</button>
+            <button>^</button>
         </div>
     </section>
   )

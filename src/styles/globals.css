@@ -1,5 +1,8 @@
 :root {
- 
+  --gray:rgba(76, 87, 93, 1.00);
+  --green: rgba(44, 67, 12, 0.84);
+  --white : rgb(255 255 255 / 100%);
+  --smoke:#efefef;
 }
 
 
@@ -31,6 +34,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
   
 }
-
+button {
+  cursor: pointer;
+  user-select: none;
+}

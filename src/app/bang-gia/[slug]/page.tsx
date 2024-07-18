@@ -1,3 +1,4 @@
+import SubBanner from '@/components/SubBanner';
 import Table_Price_Brodard from '@/noname/Table_Price_Brodard';
 import Table_Price_Givral from '@/noname/Table_Price_Givral';
 import React from 'react'
@@ -11,15 +12,21 @@ export default function PriceBrand({ params }: { params: IParams }) {
   if (list_slug[0] === slug) {
     return (
       <main>
+        <SubBanner/>
+        <div className='container'>
         <h1>Bảng giá Givral 2024</h1>
         <Table_Price_Givral />
+        </div>
       </main>
     )
   } else if (list_slug[1] === slug) {
     return (
       <main>
+          <SubBanner/>
+        <div className='container'>
         <h1>Bảng giá Brodard 2024</h1>
         <Table_Price_Brodard />
+        </div>
       </main>
     )
   }

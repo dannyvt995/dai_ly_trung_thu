@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className={s.footer_section}>
       <div className={`container ${s.footer_section_wrapper}`}>
-        <div>
+        <div className={s.row}>
           <h3>Liên hệ</h3>
           <ul>
             <li>Công ty: TNHH Đầu Tư Thương Mại Dịch Vụ TVA</li>
@@ -15,14 +15,14 @@ export default function Footer() {
             <li>Email: kinhdoanh@cqmart.vn</li>
           </ul>
         </div>
-        <div>
+        <div className={s.row}>
           <h3>Sản phẩm</h3>
           <ul>
             <li><Link href={'/san-pham/banh-tu-chon-givral'}>Bánh Trung Thu Givral</Link></li>
             <li><Link href={'/san-pham/banh-tu-chon-brodard'}>Bánh Trung Thu Brodard</Link></li>
           </ul>
         </div>
-        <div>
+        <div className={s.row}>
           <h3>Trợ giúp</h3>
           <ul>
             <li><Link href={'/lien-he'}>Liên hệ</Link></li>

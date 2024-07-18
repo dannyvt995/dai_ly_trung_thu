@@ -3,6 +3,6 @@ import React from 'react'
 
 export default function ImageLoad({src,alt}:{src:string,alt:string}) {
   return (
-    <Image src={src} alt={alt} width={0} height={0} style={{ width: 'auto', height: '100%' }} />
+    <Image quality={90} src={src} alt={alt} width={0} height={0} sizes='100%' style={{ width: '100%', height: 'auto' }} />
   )
 }
