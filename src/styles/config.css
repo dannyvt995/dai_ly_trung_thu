@@ -32,3 +32,7 @@
     border: 1px solid gray;
     width: fit-content;
 }
+
+.detail_products {
+    display:flex;
+}

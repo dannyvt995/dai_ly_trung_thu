@@ -50,27 +50,27 @@ export default function PostPage({ params }: { params: IParams }) {
   const [newProduct, setNewProduct] = useState({ id: 0, name: '', brand: '' });
   const singleItems = listbanh.single;
   const addProduct = useCounterStore((state) => state.addProduct);
-  const handleAddProduct = (e:any) => {
+  const handleAddProduct = (e: any) => {
     const val = e.target.value
-  
+
     setNewProduct({ ...newProduct, id: Number(val) })
     addProduct(newProduct);
   };
   return (
     <main>
-      <SubBanner/>
+      <SubBanner />
       {isList ? (
         <div className='container'>
           <h2>Danh sách {slug[0]}</h2>
           <ul className='list_item'>
-            {singleItems.map((item: any,index) => {
+            {singleItems.map((item: any, index) => {
               console.log(item)
               return (
                 <li key={item.id} className='item'>
-                  <div className='image'> <ImageLoad src={item.img} alt={'he'}/></div>
+                  <div className='image'> <ImageLoad src={item.img} alt={'he'} /></div>
                   <h3 className='name'>{item.name}</h3>
                   <Link href={`/banh-tu-chon/${slug[0]}/${item.slug}`}>Chi tiết</Link>
-               
+
                 </li>
               )
             })}
@@ -79,20 +79,22 @@ export default function PostPage({ params }: { params: IParams }) {
         </div>
       ) : (
         <div className='container'>
-  
+
           {singleItems.map((item: any) => {
             if (slug[1] === item.slug) {
               return (
-                <div >
-                  <ImageLoad src={item.img} alt={'he'}/>
-                          <h2>{item.name}</h2>
-                  
-                  <br />
-                  {item.slug} === {slug[1]}
-                  <br />
-                  {item.info}
-                  <br />
-                  {item.price}
+                <div className='detail_products'>
+                  <div className='image'>
+                    <ImageLoad src={item.img} alt={'he'} />
+                  </div>
+                  <div className='info'>
+                    <h2>{item.name}</h2>
+                    <br />
+                    {item.info}
+                    <br />
+                    {item.price}
+                  </div>
+                 
                 </div>
               )
             }

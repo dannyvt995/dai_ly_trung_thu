@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
+import ImageLoad from '../ImageLoad';
 
 export default function SliderProducts({ data }: { data: any }) {
     return (
@@ -22,12 +23,13 @@ export default function SliderProducts({ data }: { data: any }) {
             modules={[Pagination]}
             className="mySwiper"
         >
-            {data.map((single: any, index: number) => (
+            {data.map((item: any, index: number) => (
                 <SwiperSlide>
                     <div className='item'>
-                        <div className='image'></div>
-                        <h3 className='name'>{single.name}</h3>
-                        <a href={`/combo/${single.brand}/${single.slug}`}>Chi tiết</a>
+            
+                        <div className='image'><ImageLoad src={item.img} alt={'he'}/></div>
+                        <h3 className='name'>{item.name}</h3>
+                        <a href={`/combo/${item.brand}/${item.slug}`}>Chi tiết</a>
                     </div>
                 </SwiperSlide>
             ))}

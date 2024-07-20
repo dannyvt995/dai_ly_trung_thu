@@ -22,6 +22,7 @@ export default function RelatedCombo({ slug }: { slug: Brand }) {
     <section className={s.relatedcombo_section}>
       <div className='container'>
         <div className={s.title}>
+          
           <h2>Combo 2024</h2>
           <Link href={`/combo/${slug}`}>Xem thêm</Link>
         </div>
