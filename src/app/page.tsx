@@ -1,6 +1,5 @@
 
 import type { Metadata } from "next";
-import s from "./page.module.css";
 import TrangChu from "./trang-chu/page";
 
 export const metadata: Metadata = {

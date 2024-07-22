@@ -1,31 +1,180 @@
+'use client'
+
 import Link from 'next/link'
-import React from 'react'
-import s from './style.module.css'
 import Image from 'next/image'
+import MainSection from '../commons/MainSection'
+import { distributorNav } from '../../../public/navbar'
+import IconPhone from '../icons/IconPhone'
+import IConEmail from '../icons/IconEmail'
+import IConSearch from '../icons/IconSearch'
+import IConCart from '../icons/IConCart'
+import IConBar from '../icons/IConBar'
+import { useState } from 'react'
+
 export default function Navbar() {
+  const [open, setOpen] = useState(false)
+
+  const hanleOpenMenu = () => {
+    setOpen(!open)
+  }
+
+  const handleCloseMenu = () => {
+    setOpen(false)
+  }
+
   return (
-    <nav className={s.navbar_section}>
-      <div className='container'>
-        <div className={s.deskop}>
-          <div className={s.logo}>
-            <Link href={`/`}><Image src="/logo.png" width={0} height={0} sizes='100vw' style={{ width: "100%", height: "auto" }} alt="" /></Link>
+    <>
+      <MainSection className='px-[15px]'>
+        <div className='flex items-center justify-between h-[50px]'>
+          <div className='flex items-center gap-x-2'>
+            <div
+              className='min-[990px]:hidden cursor-pointer'
+              onClick={hanleOpenMenu}
+            >
+              <IConBar size={20} />
+            </div>
+            <ul className='flex items-center gap-x-5 max-md:hidden'>
+              <li>
+                <Link href='#'>Quà tết</Link>
+              </li>
+              <li>
+                <Link href='#'>Cqmart Food & Wine</Link>
+              </li>
+            </ul>
           </div>
-          <ul className={s.list_menu_des}>
-            <li><Link href={`/san-pham`}>Sản phẩm</Link></li>
-            <li><Link href={`/gioi-thieu`}>Giới thiệu</Link></li>
-            <li><Link href={`/banh-tu-chon`}>Bánh trung thu tự chọn</Link></li>
-            <li><Link href={`/combo`}>Combo 2024</Link></li>
-            <li><Link href={`/bang-gia`}>Bảng giá</Link></li>
-            <li><Link href={`/gio-hang`}>Giỏ hàng</Link></li>
-            <li><Link href={`/lien-he`}>Liên hệ</Link></li>
-          </ul>
-
+          <div className='flex items-center gap-x-3'>
+            <div className='relative p-1 border border-black rounded-sm flex items-center'>
+              <input
+                placeholder='Tìm kiếm sản phẩm'
+                className='outline-none placeholder-gray-500 placeholder:text-sm text-gray-500 text-sm'
+              />
+              <span>
+                <IConSearch size={16} color='white' />
+              </span>
+            </div>
+            <div className='flex items-center'>
+              <IConCart size={20} color='white' />
+              <span className='text-red-500'>(0)</span>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className={s.mobie}>
-
-      </div>
-    </nav>
+      </MainSection>
+      <MainSection className='border-y'>
+        <nav className='relative w-full h-auto'>
+          <div className='grid grid-cols-12 place-items-center gap-[30px]'>
+            <div className='col-span-3 max-md:col-span-full'>
+              <Link href={`/`}>
+                <Image
+                  src='/logo.png'
+                  width={200}
+                  height={100}
+                  className='w-full h-auto'
+                  alt='banh-trung-thu-logo'
+                />
+              </Link>
+            </div>
+            <div className='col-span-6 max-md:col-span-full'>
+              <Image
+                src={distributorNav}
+                alt='nha-cung-cap-banh-trung-thu'
+                width={distributorNav.width}
+                height={distributorNav.height}
+                className='w-full h-auto'
+              />
+            </div>
+            <div className='col-span-3 max-md:hidden'>
+              <p className='flex items-center gap-x-2'>
+                <span>
+                  <IconPhone size={16} />
+                </span>
+                <Link href='#'>0123456789</Link>
+                <Link href='#'>0123456789</Link>
+              </p>
+              <p className='flex items-center gap-x-2 text-green-700'>
+                <span>
+                  <IConEmail size={16} />
+                </span>
+                <Link href='#'>kinhdoanh@cqmart.vn</Link>
+              </p>
+            </div>
+          </div>
+        </nav>
+      </MainSection>
+      <MainSection
+        className={`${
+          open
+            ? 'fixed top-[51px] left-0 w-full h-screen bg-white'
+            : 'max-[900px]:hidden '
+        }`}
+      >
+        <div>
+          <ul className='flex flex-wrap items-center gap-x-2'>
+            <li>
+              <Link
+                href={`/san-pham`}
+                className='flex px-[14px] py-3'
+                onClick={() => handleCloseMenu()}
+              >
+                Sản phẩm
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/banh-tu-chon`}
+                className='flex px-[14px] py-3'
+                onClick={() => handleCloseMenu()}
+              >
+                Bánh trung thu tự chọn
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/combo`}
+                className='flex px-[14px] py-3'
+                onClick={() => handleCloseMenu()}
+              >
+                Combo 2024
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/bang-gia`}
+                className='flex px-[14px] py-3'
+                onClick={() => handleCloseMenu()}
+              >
+                Bảng giá
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/gioi-thieu`}
+                className='flex px-[14px] py-3'
+                onClick={() => handleCloseMenu()}
+              >
+                Giới thiệu
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/lien-he`}
+                className='flex px-[14px] py-3'
+                onClick={() => handleCloseMenu()}
+              >
+                Liên hệ
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/gio-hang`}
+                className='flex px-[14px] py-3'
+                onClick={() => handleCloseMenu()}
+              >
+                Giỏ hàng
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </MainSection>
+    </>
   )
 }

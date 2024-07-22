@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import "@/styles/lenis.css";
 import "@/styles/config.css";
 import Navbar from "@/components/Navbar";
-
+import './tailwindcss.css'
 
 export const metadata: Metadata = {
   title: "Nhà phân phối bánh trung thu 2024",
