@@ -13,6 +13,9 @@ module.exports = {
       },
       boxShadow: {
         'contact': '0 5px 10px rgba(0, 0, 0, .2)'
+      },
+      backgroundImage: {
+        'breadCrumb': 'url(/subbanner.jpg)'
       }
     },
   },

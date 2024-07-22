@@ -10,6 +10,7 @@ import IConSearch from '../icons/IconSearch'
 import IConCart from '../icons/IConCart'
 import IConBar from '../icons/IConBar'
 import { useState } from 'react'
+import IconClose from '../icons/IconClose'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -24,15 +25,24 @@ export default function Navbar() {
 
   return (
     <>
-      <MainSection className='px-[15px]'>
+      <MainSection className='max-[900px]:fixed w-full bg-white z-50 max-[900px]:border-b !py-0'>
         <div className='flex items-center justify-between h-[50px]'>
           <div className='flex items-center gap-x-2'>
-            <div
-              className='min-[990px]:hidden cursor-pointer'
-              onClick={hanleOpenMenu}
-            >
-              <IConBar size={20} />
-            </div>
+            {open ? (
+              <div
+                className='cursor-pointer  min-[900px]:hidden '
+                onClick={hanleOpenMenu}
+              >
+                <IconClose size={20} />
+              </div>
+            ) : (
+              <div
+                className='cursor-pointer  min-[900px]:hidden '
+                onClick={hanleOpenMenu}
+              >
+                <IConBar size={20} />
+              </div>
+            )}
             <ul className='flex items-center gap-x-5 max-md:hidden'>
               <li>
                 <Link href='#'>Quà tết</Link>
@@ -59,7 +69,7 @@ export default function Navbar() {
           </div>
         </div>
       </MainSection>
-      <MainSection className='border-y'>
+      <MainSection className='border-y max-[900px]:mt-[49px]'>
         <nav className='relative w-full h-auto'>
           <div className='grid grid-cols-12 place-items-center gap-[30px]'>
             <div className='col-span-3 max-md:col-span-full'>
@@ -104,69 +114,81 @@ export default function Navbar() {
         className={`${
           open
             ? 'fixed top-[51px] left-0 w-full h-screen bg-white'
-            : 'max-[900px]:hidden '
-        }`}
+            : 'max-[900px]:fixed max-[900px]:top-[51px] w-full max-[900px]:-left-full max-[900px]:h-screen bg-white'
+        } duration-500 !py-0`}
       >
         <div>
-          <ul className='flex flex-wrap items-center gap-x-2'>
-            <li>
+          <ul className='flex flex-wrap min-[900px]:items-center'>
+            <li className='relative group max-[900px]:basis-1/2'>
               <Link
                 href={`/san-pham`}
-                className='flex px-[14px] py-3'
+                className='flex px-[14px] py-3 hover:text-red-500 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
                 Sản phẩm
               </Link>
+              <ul className='min-[900px]:absolute min-[900px]:hidden min-[900px]:group-hover:block top-full left-0 min-w-[220px] min-[900px]:bg-white min-[900px]:shadow-contact duration-500'>
+                <li className='p-1 pl-4' onClick={handleCloseMenu}>
+                  <Link href='#' className='capitalize hover:text-red-500'>
+                    Bánh trung thu girval
+                  </Link>
+                </li>
+                <li className='p-1 pl-4' onClick={handleCloseMenu}>
+                  <Link href='#' className='capitalize hover:text-red-500'>
+                    Bánh trung thu brodard
+                  </Link>
+                </li>
+              </ul>
             </li>
-            <li>
+            <li className='max-[900px]:basis-1/2'>
               <Link
                 href={`/banh-tu-chon`}
-                className='flex px-[14px] py-3'
+                className='flex px-[14px] py-3 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
                 Bánh trung thu tự chọn
               </Link>
             </li>
-            <li>
+            <li className='max-[900px]:basis-1/2'>
               <Link
                 href={`/combo`}
-                className='flex px-[14px] py-3'
+                className='flex px-[14px] py-3 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
                 Combo 2024
               </Link>
             </li>
-            <li>
+            <li className='max-[900px]:basis-1/2'>
               <Link
                 href={`/bang-gia`}
-                className='flex px-[14px] py-3'
+                className='flex px-[14px] py-3 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
                 Bảng giá
               </Link>
             </li>
-            <li>
+            <li className='max-[900px]:basis-1/2'>
               <Link
                 href={`/gioi-thieu`}
-                className='flex px-[14px] py-3'
+                className='flex px-[14px] py-3 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
                 Giới thiệu
               </Link>
             </li>
-            <li>
+            <li className='max-[900px]:basis-1/2'>
               <Link
                 href={`/lien-he`}
-                className='flex px-[14px] py-3'
+                className='flex px-[14px] py-3 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
                 Liên hệ
               </Link>
             </li>
-            <li>
+            <li className='max-[900px]:basis-1/2'>
               <Link
                 href={`/gio-hang`}
-                className='flex px-[14px] py-3'
+                className='flex px-[14px] py-3 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
                 Giỏ hàng

@@ -1,36 +1,41 @@
-import type { Metadata } from "next";
-import "@/styles/globals.css";
-import "@/styles/lenis.css";
-import "@/styles/config.css";
-import Navbar from "@/components/Navbar";
+import type { Metadata } from 'next'
+import '@/styles/globals.css'
+import '@/styles/lenis.css'
+import '@/styles/config.css'
+import Navbar from '@/components/Navbar'
 import './tailwindcss.css'
 
 export const metadata: Metadata = {
-  title: "Nhà phân phối bánh trung thu 2024",
-  description: "Nhà phân phối bánh trung thu 2024 tại Sài gòn - Chiếu khấu tốt",
-};
+  title: 'Nhà phân phối bánh trung thu 2024',
+  description: 'Nhà phân phối bánh trung thu 2024 tại Sài gòn - Chiếu khấu tốt'
+}
 import { CounterStoreProvider } from '@/providers/counter-store-provider'
-import Footer from "@/components/Footer";
-import Info from "@/components/Info";
-import Widget from "@/components/Widget";
+import Footer from '@/components/Footer'
+import Info from '@/components/Info'
+import Widget from '@/components/Widget'
+import GoogleMap from '@/components/commons/GoogleMap'
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <CounterStoreProvider>
           <>
+            <div className='fixed top-0 left-0 w-full h-screen bg-breadCrumb z-[-10]'></div>
             <Navbar />
             {children}
             <Info />
+            <div className='w-full h-[400px] bg-white border-b-2 border-orange-500'>
+              <GoogleMap />
+            </div>
             <Footer />
-            <Widget/>
+            <Widget />
           </>
         </CounterStoreProvider>
       </body>
     </html>
-  );
+  )
 }

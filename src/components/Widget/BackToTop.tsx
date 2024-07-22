@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import IconArrow from '../icons/IconArrow'
 
 const BackToTop = () => {
   const [showBtn, setShowBtn] = useState(false)
@@ -26,10 +27,10 @@ const BackToTop = () => {
     <button
       className={`${
         showBtn ? 'flex' : 'hidden'
-      } fixed bottom-4 right-4 w-[50px] h-[50px] items-center justify-center bg-green-900 rounded-md shadow-md cursor-pointer text-white text-3xl`}
+      } fixed bottom-[2px] right-1 w-[50px] h-[50px] bg-white shadow-contact p-2 rounded-lg border border-gray-300 flex items-center justify-center`}
       onClick={scrollToTop}
     >
-      ^
+      <IconArrow color='white' size={24}/>
     </button>
   )
 }
