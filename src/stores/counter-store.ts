@@ -9,6 +9,8 @@ export type Product = {
   brand: string
   type: string
   quantity: number
+  price: number
+  img: string
 }
 
 export type CounterState = {
