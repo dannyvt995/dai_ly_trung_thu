@@ -11,7 +11,7 @@ export default function OutStandingProducts() {
   const results = shuffledArray.slice(0, 9)
 
   return (
-    <MainSection className='py-16 bg-slate-100 px-[15px]'>
+    <MainSection bgColor='bg-slate-100'>
       <div className=''>
         <div className='bg-black w-[100px] h-[2px] mx-auto'></div>
         <h2 className='text-[28px] py-[30px] text-center'>SẢN PHẨM NỔI BẬT</h2>
@@ -21,20 +21,22 @@ export default function OutStandingProducts() {
               key={index}
               className='col-span-3 max-xl:col-span-4 max-md:col-span-6 max-sm:col-span-full p-2 border rounded-md bg-white shadow-xl'
             >
-              <div className=''>
-                {' '}
-                <ImageLoad src={combo.img} alt={'he'} />
-              </div>
-              <div className='p-[10px] flex flex-col items-center gap-3'>
-                <h3 className='font-medium'>{combo.name}</h3>
-                <h3 className='font-medium'>{combo.id}</h3>
-                <Link
-                  href={`/combo/${combo.brand}/${combo.slug}`}
-                  className='py-[5px] px-8 border rounded-full text-orange-500'
-                >
+              <div>
+                <div className=''>
                   {' '}
-                  Chi tiết
-                </Link>
+                  <ImageLoad src={combo.img} alt={'he'} />
+                </div>
+                <div className='p-[10px] flex flex-col items-center gap-3'>
+                  <h3 className='font-medium'>{combo.name}</h3>
+                  <h3 className='font-medium'>{combo.id}</h3>
+                  <Link
+                    href={`/combo/${combo.brand}/${combo.slug}`}
+                    className='py-[5px] px-8 border rounded-full text-orange-500'
+                  >
+                    {' '}
+                    Chi tiết
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

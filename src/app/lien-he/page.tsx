@@ -9,9 +9,16 @@ export const metadata: Metadata = {
   description: 'Nhà phân phối bánh trung thu 2024 tại Sài gòn - Chiếu khấu tốt'
 }
 export default function page() {
+  const breadCrumb = [
+    {
+      text: 'Liên hệ',
+      href: '/lien-he'
+    }
+  ]
+
   return (
     <>
-      <BreadCrumb text='Liên hệ' />
+      <BreadCrumb breadCrumb={breadCrumb} />
       <MainSection>
         <div className='grid grid-cols-12 gap-[15px]'>
           <div className='col-span-6 max-md:col-span-full bg-gray-100 overflow-hidden rounded-2xl'>

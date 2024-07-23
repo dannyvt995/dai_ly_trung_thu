@@ -1,5 +1,3 @@
-import React from 'react'
-import s from './style.module.css'
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,30 +6,8 @@ export const metadata: Metadata = {
 };
 
 
-import postsData from '../../data/info.json';
-import Link from 'next/link';
-import SubBanner from '@/components/SubBanner';
-
 export default function page({ }) {
   return (
-    <main>
-      <SubBanner/>
-      <div className='container'>
-        <div className={s.list_brand}>
-          <div className={s.item}>
-            <h2>Combo Givral</h2>
-            <Link href={`/combo/givral`}>Combo Givral</Link>
-          </div>
-
-          <div className={s.item}>
-            <h2>Combo Brodard</h2>
-            <Link href={`/combo/brodard`}>Combo Brodard</Link>
-          </div>
-
-        </div>
-
-      </div>
-
-    </main>
+    <div>Combo</div>
   )
 }

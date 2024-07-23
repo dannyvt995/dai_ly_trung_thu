@@ -1,68 +1,78 @@
-import RelatedCombo from '@/components/RelatedCombo';
-import RelatedSingle from '@/components/RelatedSingle';
-import SubBanner from '@/components/SubBanner';
-import Link from 'next/link';
-import React from 'react'
+import ProductDetail from '@/components/commons/ProductDetail'
+import IconFacebook from '@/components/icons/IconFacebook'
+import data from '@/data/fake.api.json'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface IParams {
-    slug: string;
+  slug: string
 }
-export default function BrandDetail({ params }: { params: IParams }) {
-  const { slug } = params;
 
-  if(slug === 'givral') {
-    return (
-        <main>
-          <SubBanner/>
-          <div className='container'>
-          BÁNH TRUNG THU GIVRAL 2024
-          Givral Bakery là một thương hiệu bánh nổi tiếng ở Sài Gòn, đã được hình thành và ghi dấu ấn trong lòng người Sài Gòn hơn 60 năm qua. Những sản phẩm của Givral chịu nhiều ảnh hưởng của tinh hoa văn hóa ẩm thực Pháp nên những sản phẫm làm ra thường mang những nét thanh tao, tinh tế và sang trọng. Givral Bakery cam kết không sử dụng chất bảo quản, phụ gia độc hại cho sức khỏe của người sử dụng, nên nói đến bánh của Givral Bakery người ta nghĩ ngay đến những chiếc bánh tươi thơm ngon, bổ dưỡng.
-          Đặt Bánh trung thu Givral 2024 tại Bánh trung thu CQ MART, quý khách hàng sẽ được trải nghiệm dịch vụ 4 NHẤT:
-
-            1.Sản phẩm tốt nhất: Bánh mới sản xuất với hạn sử dụng luôn đảm bảo tốt nhất, chính hãng, đảm bảo chất lượng 100%.
-
-            2.Giá tốt nhất: Là nhà phân phối chính thức, cấp 1 của Givral Bakery nên chúng tôi luôn cam kết có chính sách giá và chiết khấu bán hàng tốt nhất cho khách hàng. Quý khách đặt số lượng càng nhiều, chiết khấu càng cao.
-
-            3.Giao hàng nhanh nhất: Dịch vụ giao hàng nhanh, đúng hẹn, miễn phí, hỗ trợ đi tỉnh.
-
-            4.Dịch vụ tốt nhất: Tư vấn nhiệt tình, miễn phí. Xuất hóa đơn VAT theo yêu cầu. Hỗ trợ In logo miễn phí lên hộp bánh, túi xách. Quà tặng hấp dẫn cho người liên hệ đặt hàng.
-          </div>
-          <div className='container'>
-            <RelatedCombo slug={slug as any}/>
-            <RelatedSingle slug={slug  as any}/>
-          </div>
-        </main>
-      )
-  }else if(slug === 'brodard') {
-    return (
-        <main>
-   <SubBanner/>
-          <div  className='container'>
-          BÁNH TRUNG THU BRODARD 2024
-          Brodard đã gắn bó với mảnh đất Sài Thành tròn 7 thập kỷ với biết bao tâm tư – tình cảm & nhiệt huyết mong muốn mang đến vị ngọt cho cuộc sống vẹn tròn. Không những mang đến thế giới bánh ngọt “vị Tây – đậm chất Việt” mà trong suốt bao mùa trăng, các nghệ nhân Bánh Brodard đã không ngừng trao hết tâm tư tình cảm của mình vào từng chiếc bánh “trông trăng” như thay lời tri ân chân thanh gửi đến tất cả những ai “đã và đang yêu thương Brodard”
-          Đặt Bánh trung thu Brodard 2024 tại Bánh trung thu CQ MART, quý khách hàng sẽ được trải nghiệm dịch vụ 4 NHẤT:
-
-          1.Sản phẩm tốt nhất: Bánh mới sản xuất với hạn sử dụng luôn đảm bảo tốt nhất, chính hãng, đảm bảo chất lượng 100%, trực tiếp xuất xưởng từ nhà máy tới khách hàng.​
-
-          2.Giá tốt nhất: Là nhà phân phối chính thức của các Hãng bánh nổi tiếng, không qua trung gian, nên chúng tôi luôn cam kết có chính sách giá và chiết khấu bán hàng tốt nhất cho khách hàng. Quý khách đặt số lượng càng nhiều, chiết khấu càng cao.
-
-          3.Giao hàng nhanh nhất: Chúng tôi có dịch vụ giao hàng nhanh, đúng hẹn, miễn phí. Ngoài ra hỗ trợ giao hàng tân nơi tới các tỉnh, thành lân cận TP HCM.
-
-          4.Dịch vụ tốt nhất: Tư vấn nhiệt tình, miễn phí. Xuất hóa đơn VAT theo yêu cầu. Hỗ trợ In logo doanh nghiệp miễn phí lên hộp bánh, túi xách. Quà tặng hấp dẫn cho người liên hệ đặt hàng.
-
-          </div>
-          <div className='container'>
-            <RelatedCombo slug={slug  as any}/>
-            <RelatedSingle slug={slug  as any}/>
-          </div>
-        </main>
-      )
-  }else{
-    return (
-        <main>
-          Some err on slug san-pham
-        </main>
-      )
+const getProductId = (_id: string | undefined) => {
+  if (_id) {
+    return data.products.find((item) => item.id === parseInt(_id))
+  } else {
+    throw new Error('Không tìm thấy sản phẩm')
   }
-  
+}
+
+export default function BrandDetail({ params }: { params: IParams }) {
+  const { slug } = params
+  let id = slug.split('-').pop()
+  const data = getProductId(id)
+
+  return (
+    <>
+      {data ? (
+        <div className='p-4 bg-white rounded-md'>
+          <h1 className='text-4xl mb-2'>{data?.name}</h1>
+          <p>
+            Thương hiệu:{' '}
+            <span className='text-[#f3650e]'>
+              Bánh trung thu {data?.type === 'girval' ? 'Girval' : 'Brodard'}
+            </span>{' '}
+          </p>
+          <div className='grid grid-cols-12 gap-5 mt-4'>
+            <div className='col-span-6 max-md:col-span-full'>
+              <div className='w-[397px] h-[267px]'>
+                <Image
+                  src={data?.img}
+                  alt={data?.name}
+                  width={0}
+                  height={0}
+                  sizes='100%'
+                  className='w-full h-full'
+                />
+              </div>
+            </div>
+            <div className='col-span-6 max-md:col-span-full'>
+              <div>
+                <h4 className='mb-2 text-xl'>Thông tin sản phẩm</h4>
+                <p>{data?.name} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla unde magnam maiores officia placeat necessitatibus tenetur ducimus odio asperiores, atque delectus omnis sit, ipsam repellendus ipsum provident ea, iusto doloribus.</p>
+              </div>
+              <div className='mt-7 pt-5 pb-[10px] border-y border-dashed border-gray-300'>
+                <p>
+                  Giá:{' '}
+                  <Link href='#' className='text-[#f3650e] font-medium'>
+                    Liên hệ
+                  </Link>
+                </p>
+              </div>
+              <div className='pt-5 pb-[10px]'>
+                <p className='flex'>
+                  Chia sẻ:{' '}
+                  <Link href='#' className=''>
+                    <IconFacebook color='blue' size={24} />
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+          <ProductDetail />
+        </div>
+      ) : (
+        <p>Không tìm thấy sản phẩm</p>
+      )}
+    </>
+  )
 }

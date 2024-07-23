@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <>
-      <MainSection className='max-[900px]:fixed w-full bg-white z-50 max-[900px]:border-b !py-0'>
+      <MainSection className='max-[900px]:fixed w-full bg-white max-[900px]:border-b !py-0 z-[999]'>
         <div className='flex items-center justify-between h-[50px]'>
           <div className='flex items-center gap-x-2'>
             {open ? (
@@ -115,7 +115,7 @@ export default function Navbar() {
           open
             ? 'fixed top-[51px] left-0 w-full h-screen bg-white'
             : 'max-[900px]:fixed max-[900px]:top-[51px] w-full max-[900px]:-left-full max-[900px]:h-screen bg-white'
-        } duration-500 !py-0`}
+        } duration-500 !py-0 z-[999]`}
       >
         <div>
           <ul className='flex flex-wrap min-[900px]:items-center'>
