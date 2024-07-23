@@ -11,9 +11,11 @@ import IConCart from '../icons/IConCart'
 import IConBar from '../icons/IConBar'
 import { useState } from 'react'
 import IconClose from '../icons/IconClose'
+import useCartStore from '@/stores/cart.store'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const { quantity } = useCartStore()
 
   const hanleOpenMenu = () => {
     setOpen(!open)
@@ -64,7 +66,7 @@ export default function Navbar() {
             </div>
             <div className='flex items-center'>
               <IConCart size={20} color='white' />
-              <span className='text-red-500'>(0)</span>
+              <span className='text-red-500'>({quantity})</span>
             </div>
           </div>
         </div>
@@ -127,18 +129,6 @@ export default function Navbar() {
               >
                 Sản phẩm
               </Link>
-              <ul className='min-[900px]:absolute min-[900px]:hidden min-[900px]:group-hover:block top-full left-0 min-w-[220px] min-[900px]:bg-white min-[900px]:shadow-contact duration-500'>
-                <li className='p-1 pl-4' onClick={handleCloseMenu}>
-                  <Link href='#' className='capitalize hover:text-red-500'>
-                    Bánh trung thu girval
-                  </Link>
-                </li>
-                <li className='p-1 pl-4' onClick={handleCloseMenu}>
-                  <Link href='#' className='capitalize hover:text-red-500'>
-                    Bánh trung thu brodard
-                  </Link>
-                </li>
-              </ul>
             </li>
             <li className='max-[900px]:basis-1/2'>
               <Link
@@ -200,3 +190,16 @@ export default function Navbar() {
     </>
   )
 }
+
+// ;<ul className='min-[900px]:absolute min-[900px]:hidden min-[900px]:group-hover:block top-full left-0 min-w-[220px] min-[900px]:bg-white min-[900px]:shadow-contact duration-500'>
+//   <li className='p-1 pl-4' onClick={handleCloseMenu}>
+//     <Link href='#' className='capitalize hover:text-red-500'>
+//       Bánh trung thu girval
+//     </Link>
+//   </li>
+//   <li className='p-1 pl-4' onClick={handleCloseMenu}>
+//     <Link href='#' className='capitalize hover:text-red-500'>
+//       Bánh trung thu brodard
+//     </Link>
+//   </li>
+// </ul>

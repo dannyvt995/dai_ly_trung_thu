@@ -1,8 +1,5 @@
-'use client'
-
 import Link from 'next/link'
 import MainSection from './MainSection'
-import { usePathname } from 'next/navigation'
 
 interface Props {
   breadCrumb: {
@@ -12,8 +9,6 @@ interface Props {
 }
 
 const BreadCrumb = ({ breadCrumb }: Props) => {
-  const pathname = usePathname()
-  console.log('Check pathname: ', pathname)
   
   return (
     <MainSection className='py-10' bgColor='bg-transparent'>

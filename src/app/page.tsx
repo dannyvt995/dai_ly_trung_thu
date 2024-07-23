@@ -1,14 +1,11 @@
-
-import type { Metadata } from "next";
-import TrangChu from "./trang-chu/page";
+import type { Metadata } from 'next'
+import TrangChu from './trang-chu/page'
 
 export const metadata: Metadata = {
-  title: "Trang chủ - Nhà phân phối bánh trung thu 2024",
-  description: "Nhà phân phối bánh trung thu 2024 tại Sài gòn - Chiếu khấu tốt",
-};
+  title: 'Trang chủ - Nhà phân phối bánh trung thu 2024',
+  description: 'Nhà phân phối bánh trung thu 2024 tại Sài gòn - Chiếu khấu tốt'
+}
 
 export default function Home() {
-  return (
-    <TrangChu/>
-  );
+  return <TrangChu />
 }

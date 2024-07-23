@@ -4,6 +4,7 @@ import { shuffleArray } from '@/utils/shuffleArray'
 import ImageLoad from '../ImageLoad'
 import MainSection from '../commons/MainSection'
 import Link from 'next/link'
+import CardProduct from '../commons/CardProduct'
 
 export default function OutStandingProducts() {
   const list_combo = [...data.givral.combo, ...data.brodard.combo]
@@ -19,25 +20,14 @@ export default function OutStandingProducts() {
           {results.map((combo, index) => (
             <div
               key={index}
-              className='col-span-3 max-xl:col-span-4 max-md:col-span-6 max-sm:col-span-full p-2 border rounded-md bg-white shadow-xl'
+              className='col-span-3 max-xl:col-span-4 max-md:col-span-6 max-sm:col-span-full p-2 border rounded-md bg-white shadow-xl hover:-translate-y-4 duration-300'
             >
-              <div>
-                <div className=''>
-                  {' '}
-                  <ImageLoad src={combo.img} alt={'he'} />
-                </div>
-                <div className='p-[10px] flex flex-col items-center gap-3'>
-                  <h3 className='font-medium'>{combo.name}</h3>
-                  <h3 className='font-medium'>{combo.id}</h3>
-                  <Link
-                    href={`/combo/${combo.brand}/${combo.slug}`}
-                    className='py-[5px] px-8 border rounded-full text-orange-500'
-                  >
-                    {' '}
-                    Chi tiết
-                  </Link>
-                </div>
-              </div>
+              <CardProduct
+              name={combo.name}
+              id={combo.id}
+              img={combo.img}
+              href={`/san-pham/${combo.slug}-${combo.id}`}
+            />
             </div>
           ))}
         </div>

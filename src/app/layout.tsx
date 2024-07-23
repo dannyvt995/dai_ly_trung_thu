@@ -4,6 +4,8 @@ import '@/styles/lenis.css'
 import '@/styles/config.css'
 import Navbar from '@/components/Navbar'
 import './tailwindcss.css'
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
   title: 'Nhà phân phối bánh trung thu 2024',
@@ -33,6 +35,18 @@ export default function RootLayout({
             </div>
             <Footer />
             <Widget />
+            <ToastContainer
+              position='top-right'
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme='light'
+            />
           </>
         </CounterStoreProvider>
       </body>

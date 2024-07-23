@@ -1,26 +1,24 @@
-import CardProductDetail from '@/components/commons/CardProductDetail'
+import CardComboDetail from '@/components/commons/CardComboDetail'
 import ProductDetail from '@/components/commons/ProductDetail'
-import IconFacebook from '@/components/icons/IconFacebook'
 import data from '@/data/fake.api.json'
 import Image from 'next/image'
-import Link from 'next/link'
 
 interface IParams {
   slug: string
 }
 
-const getProductId = (_id: string | undefined) => {
+const getComboId = (_id: string | undefined) => {
   if (_id) {
-    return data.products.find((item) => item.id === parseInt(_id))
+    return data.combo.find((item) => item.id === parseInt(_id))
   } else {
     throw new Error('Không tìm thấy sản phẩm')
   }
 }
 
-export default function ProductDetailPage({ params }: { params: IParams }) {
+export default function ComboDetailPage({ params }: { params: IParams }) {
   const { slug } = params
   let id = slug.split('-').pop()
-  const data = getProductId(id)
+  const data = getComboId(id)
 
   return (
     <>
@@ -30,7 +28,8 @@ export default function ProductDetailPage({ params }: { params: IParams }) {
           <p>
             Thương hiệu:{' '}
             <span className='text-[#f3650e]'>
-              Bánh trung thu {data?.type === 'girval' ? 'Girval' : 'Brodard'}
+              Bánh trung thu{' '}
+              {data?.type === 'combo/girval' ? 'Girval' : 'Brodard'}
             </span>{' '}
           </p>
           <div className='grid grid-cols-12 gap-5 mt-4'>
@@ -47,7 +46,7 @@ export default function ProductDetailPage({ params }: { params: IParams }) {
               </div>
             </div>
             <div className='col-span-6 max-md:col-span-full'>
-              <CardProductDetail data={data}/>
+              <CardComboDetail data={data} />
             </div>
           </div>
           <ProductDetail />
