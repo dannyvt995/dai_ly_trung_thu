@@ -54,7 +54,6 @@ export default function PostPage({ params }: { params: IParams }) {
     const val = e.target.value
 
     setNewProduct({ ...newProduct, id: Number(val) })
-    addProduct(newProduct);
   };
   return (
     <main>

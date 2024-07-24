@@ -7,7 +7,6 @@ const ComboLayout = ({
   children,
 }: {
   children: ReactNode
-  breakCr: ReactNode
 }) => {
   const breadCrumb = [
     {
