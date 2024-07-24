@@ -9,7 +9,7 @@
       "egg": 2,
       "price": 457000,
       "slug": "banh-trung-thu-givral-thap-cam-ga-quay-vi-ca-yen-sao",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -20,7 +20,7 @@
       "egg": 2,
       "price": 363000,
       "slug": "banh-trung-thu-givral-thap-cam-ga-quay-vi-ca-dac-biet",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -31,7 +31,7 @@
       "egg": 2,
       "price": 319000,
       "slug": "banh-trung-thu-givral-thap-cam-ga-quay-vi-ca",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -42,7 +42,7 @@
       "egg": 2,
       "price": 253000,
       "slug": "banh-trung-thu-givral-thap-cam-ga-quay",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -53,7 +53,7 @@
       "egg": 2,
       "price": 237000,
       "slug": "banh-trung-thu-givral-thap-cam",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -64,7 +64,7 @@
       "egg": 2,
       "price": 353000,
       "slug": "banh-trung-thu-givral-thap-cam-ngu-nhan",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -75,7 +75,7 @@
       "egg": 2,
       "price": 303000,
       "slug": "banh-trung-thu-givral-thap-cam-ga-quay-bao-ngu",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -86,7 +86,7 @@
       "egg": 2,
       "price": 208000,
       "slug": "banh-trung-thu-givral-hat-sen",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -97,7 +97,7 @@
       "egg": 2,
       "price": 179000,
       "slug": "banh-trung-thu-givral-dau-xanh",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -108,7 +108,7 @@
       "egg": 2,
       "price": 185000,
       "slug": "banh-trung-thu-givral-dau-xanh-sau-rieng",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -119,7 +119,7 @@
       "egg": 2,
       "price": 172000,
       "slug": "banh-trung-thu-givral-dua-hat-dua",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -130,7 +130,7 @@
       "egg": 1,
       "price": 144000,
       "slug": "banh-trung-thu-givral-khoai-mon",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -141,7 +141,7 @@
       "egg": 2,
       "price": 205000,
       "slug": "banh-trung-thu-givral-tra-xanh",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -152,7 +152,7 @@
       "egg": 2,
       "price": 167000,
       "slug": "banh-trung-thu-givral-chocolate-dau-phong",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -163,7 +163,7 @@
       "egg": 2,
       "price": 199000,
       "slug": "banh-trung-thu-givral-la-dua",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -174,7 +174,7 @@
       "egg": 2,
       "price": 193000,
       "slug": "banh-trung-thu-givral-dua-la-dua",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -185,7 +185,7 @@
       "egg": 2,
       "price": 167000,
       "slug": "banh-trung-thu-givral-chocolate-cappucino",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -196,7 +196,7 @@
       "egg": 0,
       "price": 140000,
       "slug": "banh-trung-thu-givral-dau-xanh-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -207,7 +207,7 @@
       "egg": 0,
       "price": 161000,
       "slug": "banh-trung-thu-givral-hat-sen-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -218,7 +218,7 @@
       "egg": 0,
       "price": 148000,
       "slug": "banh-trung-thu-givral-dau-do-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -229,7 +229,7 @@
       "egg": 0,
       "price": 10,
       "slug": "banh-trung-thu-givral-thap-cam-chay-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -240,7 +240,7 @@
       "egg": 0,
       "price": 128000,
       "slug": "banh-trung-thu-givral-deo-dau-xanh-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -251,7 +251,7 @@
       "egg": 0,
       "price": 155000,
       "slug": "banh-trung-thu-givral-deo-hat-sen-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -262,7 +262,7 @@
       "egg": 0,
       "price": 134000,
       "slug": "banh-trung-thu-givral-deo-la-dua-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -273,7 +273,7 @@
       "egg": 0,
       "price": 163000,
       "slug": "banh-trung-thu-givral-deo-tra-xanh-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -284,7 +284,7 @@
       "egg": 0,
       "price": 132000,
       "slug": "banh-trung-thu-givral-deo-khoai-mon-0-trung",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -295,7 +295,7 @@
       "egg": 1,
       "price": 152000,
       "slug": "banh-trung-thu-givral-tao-do",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -306,7 +306,7 @@
       "egg": 1,
       "price": 145000,
       "slug": "banh-trung-thu-givral-dua-sau-rieng",
-      "type": "girval"
+      "type": "givral"
     },
     {
       "img": "/item_single.jpg",
@@ -517,7 +517,7 @@
       "price": 772000,
       "body": "Bánh Trung Thu Givral Tết Đoàn Viên 1 với hương vị truyền thống.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -528,7 +528,7 @@
       "price": 732000,
       "body": "Bánh Trung Thu Givral Tết Đoàn Viên 2 mang đến sự ngọt ngào.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -539,7 +539,7 @@
       "price": 673000,
       "body": "Bánh Trung Thu Givral Tết Đoàn Viên 3 với sự kết hợp hoàn hảo.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -550,7 +550,7 @@
       "price": 863000,
       "body": "Combo Tâm Giao 3 thích hợp cho các dịp lễ.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -561,7 +561,7 @@
       "price": 878000,
       "body": "Combo Sum Vầy 1 với nhiều hương vị độc đáo.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -572,7 +572,7 @@
       "price": 768000,
       "body": "Combo Sum Vầy 2 mang đến sự đa dạng.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -583,7 +583,7 @@
       "price": 715000,
       "body": "Combo Sum Vầy 3 dành cho gia đình.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -594,7 +594,7 @@
       "price": 923000,
       "body": "Combo Tâm Giao 1 chất lượng cao.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -605,7 +605,7 @@
       "price": 884000,
       "body": "Combo Tâm Giao 2 phong phú hương vị.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -616,7 +616,7 @@
       "price": 438000,
       "body": "Combo Trăng Thanh 1 giá cả phải chăng.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -627,7 +627,7 @@
       "price": 1197000,
       "body": "Combo Thành Ý 1 nổi bật với chất lượng.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -638,7 +638,7 @@
       "price": 1072000,
       "body": "Combo Thành Ý 2 hảo hạng.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -649,7 +649,7 @@
       "price": 578000,
       "body": "Combo Trăng Thanh 2 thích hợp cho mọi lứa tuổi.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -660,7 +660,7 @@
       "price": 1113000,
       "body": "Combo Trăng Yêu Thương 1 đậm đà hương vị.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -671,7 +671,7 @@
       "price": 1013000,
       "body": "Combo Trăng Yêu Thương 2 độc đáo và sáng tạo.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -682,7 +682,7 @@
       "price": 981000,
       "body": "Combo Trăng Yêu Thương 3 hấp dẫn và mới lạ.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -693,7 +693,7 @@
       "price": 1149000,
       "body": "Combo Như Ý dành cho những buổi tiệc lớn.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -704,7 +704,7 @@
       "price": 691000,
       "body": "Combo Sắc Màu với nhiều màu sắc hấp dẫn.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",
@@ -715,7 +715,7 @@
       "price": 778000,
       "body": "Combo Tình Thân mang lại sự gắn kết.",
       "codes": [],
-      "type": "combo/girval"
+      "type": "combo/givral"
     },
     {
       "img": "/item_combo.jpg",

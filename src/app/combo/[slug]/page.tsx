@@ -29,7 +29,7 @@ export default function ComboDetailPage({ params }: { params: IParams }) {
             Thương hiệu:{' '}
             <span className='text-[#f3650e]'>
               Bánh trung thu{' '}
-              {data?.type === 'combo/girval' ? 'Girval' : 'Brodard'}
+              {data?.type === 'combo/givral' ? 'Givral' : 'Brodard'}
             </span>{' '}
           </p>
           <div className='grid grid-cols-12 gap-5 mt-4'>

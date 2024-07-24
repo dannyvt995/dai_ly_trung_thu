@@ -30,7 +30,7 @@ export default function ProductDetailPage({ params }: { params: IParams }) {
           <p>
             Thương hiệu:{' '}
             <span className='text-[#f3650e]'>
-              Bánh trung thu {data?.type === 'girval' ? 'Girval' : 'Brodard'}
+              Bánh trung thu {data?.type === 'givral' ? 'Givral' : 'Brodard'}
             </span>{' '}
           </p>
           <div className='grid grid-cols-12 gap-5 mt-4'>
