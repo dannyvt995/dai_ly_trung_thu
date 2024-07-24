@@ -24,3 +24,27 @@ export interface Data {
   givral: BrandData
   brodard: BrandData
 }
+
+export interface IProduct {
+  img: string
+  id: number
+  brand: string
+  name: string
+  trongluong?: number | undefined
+  egg?: number | undefined
+  price: number
+  slug: string
+  type: string
+}
+
+export interface ICombo {
+  img: string
+  id: number
+  brand: string
+  name: string
+  slug: string
+  price: number
+  body: string
+  codes: []
+  type: string
+}

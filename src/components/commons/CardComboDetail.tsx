@@ -3,31 +3,9 @@
 import Link from 'next/link'
 import IconFacebook from '../icons/IconFacebook'
 import useCartStore from '@/stores/cart.store'
+import { ICombo } from '@/types/data_type'
 
 interface Props {
-  // data:
-  //   | {
-  //       img: string
-  //       id: number
-  //       brand: string
-  //       name: string
-  //       slug: string
-  //       price: number
-  //       body: string
-  //       codes: never[]
-  //       type: string
-  //     }
-  //   | {
-  //       img: string
-  //       id: number
-  //       brand: string
-  //       name: string
-  //       slug: string
-  //       body: string
-  //       price: number
-  //       type: string
-  //       codes?: undefined
-  //     }
   data: any
 }
 

@@ -10,6 +10,7 @@ interface CartState {
   increaseQuantity: (id: number) => void
   decreaseQuantity: (id: number) => void
   removeItemFromCart: (id: number) => void
+  order: ()=> void
 }
 
 const useCartStore = create(
@@ -89,6 +90,9 @@ const useCartStore = create(
             })
           }
         }
+      },
+      order: () => {
+        set({ cartItems: [], quantity: 0 })
       }
     }),
     {

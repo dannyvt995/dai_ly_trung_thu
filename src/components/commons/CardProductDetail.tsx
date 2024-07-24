@@ -3,9 +3,10 @@
 import Link from 'next/link'
 import IconFacebook from '../icons/IconFacebook'
 import useCartStore from '@/stores/cart.store'
+import { IProduct } from '@/types/data_type'
 
 interface Props {
-  data: any
+  data: IProduct
 }
 
 const CardProductDetail = ({ data }: Props) => {
