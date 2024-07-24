@@ -9,7 +9,7 @@ interface IParams {
 
 const getComboId = (_id: string | undefined) => {
   if (_id) {
-    return data.combo.find((item) => item.id === parseInt(_id))
+    return data.products.find((item) => item.id === parseInt(_id))
   } else {
     throw new Error('Không tìm thấy sản phẩm')
   }

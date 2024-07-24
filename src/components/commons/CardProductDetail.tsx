@@ -5,17 +5,7 @@ import IconFacebook from '../icons/IconFacebook'
 import useCartStore from '@/stores/cart.store'
 
 interface Props {
-  data: {
-    img: string
-    id: number
-    brand: string
-    name: string
-    trongluong: number
-    egg: number
-    price?: number
-    slug: string
-    type: string
-  }
+  data: any
 }
 
 const CardProductDetail = ({ data }: Props) => {
@@ -29,7 +19,7 @@ const CardProductDetail = ({ data }: Props) => {
     <div>
       <div>
         <h4 className='mb-2 text-xl'>Thông tin sản phẩm</h4>
-        <p>{data.name}</p>
+        <p>{data?.name}</p>
       </div>
       <div className='mt-7 pt-5 pb-[10px] border-y border-dashed border-gray-300'>
         <p>

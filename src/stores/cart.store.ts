@@ -7,9 +7,9 @@ interface CartState {
   quantity: number
   cartItems: Product[]
   addProduct: (item: Product) => void
-  increaseQuantity: (id: number, type: string) => void
-  decreaseQuantity: (id: number, type: string) => void
-  removeItemFromCart: (id: number, type: string) => void
+  increaseQuantity: (id: number) => void
+  decreaseQuantity: (id: number) => void
+  removeItemFromCart: (id: number) => void
 }
 
 const useCartStore = create(
@@ -19,7 +19,7 @@ const useCartStore = create(
       cartItems: [],
       addProduct: (item) => {
         const itemExists = get().cartItems.find(
-          (cartItem) => cartItem.id === item.id && cartItem.type === item.type
+          (cartItem) => cartItem.id === item.id
         )
 
         if (itemExists) {
@@ -40,9 +40,9 @@ const useCartStore = create(
 
         toast.success('Thêm vào giỏ hàng thành công')
       },
-      increaseQuantity: (id: number, type: string) => {
+      increaseQuantity: (id: number) => {
         const itemExists = get().cartItems.find(
-          (cartItem) => cartItem.id === id && cartItem.type === type
+          (cartItem) => cartItem.id === id
         )
 
         if (itemExists) {
@@ -56,20 +56,14 @@ const useCartStore = create(
           })
         }
       },
-      decreaseQuantity: (id: number, type: string) => {
+      decreaseQuantity: (id: number) => {
         const itemExists = get().cartItems.find(
-          (cartItem) => cartItem.id === id && cartItem.type === type
+          (cartItem) => cartItem.id === id
         )
 
         if (itemExists) {
           if (itemExists.quantity === 1) {
-            const updatedCartItems = get().cartItems.filter(
-              (item) => item.id !== id && item.type !== type
-            )
-            set({
-              cartItems: updatedCartItems,
-              quantity: (get().quantity -= 1)
-            })
+            return
           } else {
             itemExists.quantity--
             set({
@@ -79,7 +73,23 @@ const useCartStore = create(
           }
         }
       },
-      removeItemFromCart: (id: number, type: string) => {}
+      removeItemFromCart: (id: number) => {
+        const itemExists = get().cartItems.find(
+          (cartItem) => cartItem.id === id
+        )
+
+        if (itemExists) {
+          if (typeof itemExists.quantity === 'number') {
+            const updatedCartItems = get().cartItems.filter(
+              (item) => item.id !== id
+            )
+            set({
+              cartItems: updatedCartItems,
+              quantity: get().quantity - itemExists.quantity
+            })
+          }
+        }
+      }
     }),
     {
       name: 'cart-cake-moon'

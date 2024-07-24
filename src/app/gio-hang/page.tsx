@@ -6,19 +6,25 @@ import useCartStore from '@/stores/cart.store'
 import Image from 'next/image'
 
 const ProductManager = () => {
-  const { cartItems, quantity, increaseQuantity, decreaseQuantity } =
-    useCartStore()
+  const {
+    cartItems,
+    quantity,
+    increaseQuantity,
+    decreaseQuantity,
+    removeItemFromCart
+  } = useCartStore()
 
-  const handleAddProduct = () => {
-    // addProduct(newProduct)
+
+  const handleIncreaseQuantity = (id: number) => {
+    increaseQuantity(id)
   }
 
-  const handleIncreaseQuantity = (id: number, type: string) => {
-    increaseQuantity(id, type)
+  const handleDecreaseQuantity = (id: number) => {
+    decreaseQuantity(id)
   }
 
-  const handleDecreaseQuantity = (id: number, type: string) => {
-    decreaseQuantity(id, type)
+  const handleDelete = (id: number) => {
+    removeItemFromCart(id)
   }
 
   const breadCrumb = [
@@ -52,37 +58,47 @@ const ProductManager = () => {
                   </div>
                 </div>
                 <div className='col-span-9'>
-                  <div className='flex flex-wrap max-md:flex max-md:flex-col max-md:gap-y-2'>
-                    <p className='basis-1/2 max-md:basis-full md:pr-2'>
-                      {item.name}
-                    </p>
-                    <div className='flex items-center basis-1/4 max-md:basis-full'>
-                      <button
-                        className='size-[30px] text-center font-medium border'
-                        onClick={() =>
-                          handleDecreaseQuantity(item.id, item.type)
-                        }
-                      >
-                        -
-                      </button>
-                      <div
-                        className='size-[30px] flex items-center justify-center font-medium outline-none bg-gray-300'
-                        defaultValue={1}
-                      >
-                        {item.quantity}
+                  <div>
+                    <div className='flex flex-wrap max-md:flex max-md:flex-col max-md:gap-y-2'>
+                      <p className='basis-1/2 max-md:basis-full md:pr-2'>
+                        {item.name}
+                      </p>
+                      <div className='flex items-center basis-1/4 max-md:basis-full'>
+                        <button
+                          className='size-[30px] text-center font-medium border'
+                          onClick={() =>
+                            handleDecreaseQuantity(item.id)
+                          }
+                        >
+                          -
+                        </button>
+                        <div
+                          className='size-[30px] flex items-center justify-center font-medium outline-none bg-gray-300'
+                          defaultValue={1}
+                        >
+                          {item.quantity}
+                        </div>
+                        <button
+                          className='size-[30px] text-center font-medium border'
+                          onClick={() =>
+                            handleIncreaseQuantity(item.id)
+                          }
+                        >
+                          +
+                        </button>
                       </div>
-                      <button
-                        className='size-[30px] text-center font-medium border'
-                        onClick={() =>
-                          handleIncreaseQuantity(item.id, item.type)
-                        }
-                      >
-                        +
-                      </button>
+                      <div className='flex items-center basis-1/4 max-md:basis-full'>
+                        <p>
+                          {(item.quantity * item.price)?.toLocaleString()} đ
+                        </p>
+                      </div>
                     </div>
-                    <div className='flex items-center basis-1/4 max-md:basis-full'>
-                      <p>{(item.quantity * item.price)?.toLocaleString()} đ</p>
-                    </div>
+                    <button
+                      className='mt-3 hover:text-[#fd7e14]'
+                      onClick={() => handleDelete(item.id)}
+                    >
+                      Xóa
+                    </button>
                   </div>
                 </div>
               </div>

@@ -1,9 +1,7 @@
 import CardProductDetail from '@/components/commons/CardProductDetail'
 import ProductDetail from '@/components/commons/ProductDetail'
-import IconFacebook from '@/components/icons/IconFacebook'
 import data from '@/data/fake.api.json'
 import Image from 'next/image'
-import Link from 'next/link'
 
 interface IParams {
   slug: string

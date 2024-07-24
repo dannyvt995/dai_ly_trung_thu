@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 const getCombo = () => {
-  const comboList = data.combo
+  const comboList = data.products
   return comboList
 }
 
