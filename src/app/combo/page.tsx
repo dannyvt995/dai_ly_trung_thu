@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 const getCombo = () => {
-  const comboList = data.products
+  const comboList = data.products.filter(item => item.type.includes('combo'))
   return comboList
 }
 
@@ -33,12 +33,7 @@ export default async function SanPham({
             key={item.id}
             className='col-span-4 max-md:col-span-6 max-sm:col-span-full bg-white'
           >
-            <CardProduct
-              name={item.name}
-              id={item.id}
-              img={item.img}
-              href={`/combo/${item.slug}-${item.id}`}
-            />
+            <CardProduct data={item} href='/combo' />
           </div>
         ))}
       </div>

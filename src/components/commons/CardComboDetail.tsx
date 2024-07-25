@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import IconFacebook from '../icons/IconFacebook'
 import useCartStore from '@/stores/cart.store'
-import { ICombo } from '@/types/data_type'
 
 interface Props {
   data: any

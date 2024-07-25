@@ -1,12 +1,16 @@
 import CardProduct from '@/components/commons/CardProduct'
-import Pagination from '@/components/commons/Pagination'
 import data from '@/data/fake.api.json'
 
-const getProduct = (_id: string | undefined) => {
-  const productId = _id !== '2' ? '1' : '2'
-  return productId === '1'
-    ? data.products.slice(0, 20)
-    : data.products.slice(21)
+const getProduct = (type: string | undefined) => {
+  console.log('Check type: ', type)
+  const listProducts = data.products
+  if (type) {
+    const productByType = listProducts.filter(
+      (item) => item.type.toLowerCase() === type.toLowerCase()
+    )
+    return productByType
+  }
+  return listProducts
 }
 
 export default async function SanPham({
@@ -14,9 +18,9 @@ export default async function SanPham({
 }: {
   searchParams: { [key: string]: string | undefined }
 }) {
-  const { slug } = searchParams
+  const { type } = searchParams
 
-  const twentyItems = getProduct(slug)
+  const twentyItems = getProduct(type)
 
   return (
     <div>
@@ -25,17 +29,15 @@ export default async function SanPham({
       </div>
       <div className='grid grid-cols-12 auto-rows-fr gap-[30px]'>
         {twentyItems?.map((item) => (
-          <div key={item.id} className='col-span-4 max-md:col-span-6 max-sm:col-span-full bg-white'>
-            <CardProduct
-              name={item.name}
-              id={item.id}
-              img={item.img}
-              href={`/san-pham/${item.slug}-${item.id}`}
-            />
+          <div
+            key={item.id}
+            className='col-span-4 max-md:col-span-6 max-sm:col-span-full bg-white'
+          >
+            <CardProduct data={item} href='/san-pham' />
           </div>
         ))}
       </div>
-      <Pagination slug={slug}/>
+      {/* <Pagination slug={slug} /> */}
     </div>
   )
 }

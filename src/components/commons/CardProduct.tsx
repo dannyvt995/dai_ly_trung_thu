@@ -1,30 +1,29 @@
 import Link from 'next/link'
 import ImageLoad from '../ImageLoad'
+import { FaCartPlus } from 'react-icons/fa'
+import BtnAddToCart from './BtnAddToCart'
+import { IProduct } from '@/types/product.type'
 
 interface Props {
-  img: string
-  name: string
-  id: number
+  data: IProduct
   href: string
 }
 
-const CardProduct = ({ img, name, id, href = '#' }: Props) => {
+const CardProduct = ({ data, href }: Props) => {
   return (
     <div className='flex flex-col justify-between h-full'>
-      <div className=''>
+      <Link href={`${href}/${data.slug}-${data.id}`} className=''>
         {' '}
-        <ImageLoad src={img} alt={'he'} />
-      </div>
-      <div className='p-[10px] flex flex-col justify-start gap-3'>
-        <h3 className='font-medium text-center'>{name}</h3>
-      </div>
-      <Link
-        href={href}
-        className='block mx-auto text-center w-fit py-[5px] px-8 border rounded-full text-orange-500 mb-5'
-      >
-        {' '}
-        Chi tiết
+        <ImageLoad src={data.img} alt={'he'} />
       </Link>
+      <div className='p-[10px] flex flex-col justify-start gap-3'>
+        <h3 className='font-medium'>{data.name}</h3>
+      </div>
+      <div className='flex items-center justify-between px-[10px] mb-3'>
+        <p className='text-[#f3650e]'>{data?.price?.toLocaleString()} đ</p>
+        <BtnAddToCart data={data}/>
+      </div>
+      <div></div>
     </div>
   )
 }

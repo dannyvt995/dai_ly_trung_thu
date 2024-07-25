@@ -4,11 +4,11 @@ const SidebarProduct = () => {
   const lists = [
     {
       text: 'Bánh Trung Thu Givral',
-      href: '#'
+      href: '/san-pham?type=givral'
     },
     {
       text: 'Bánh Trung Thu Brodard',
-      href: '#'
+      href: '/san-pham?type=brodard'
     }
   ]
   return (

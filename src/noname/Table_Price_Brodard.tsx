@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Table_Price_Brodard() {
   return (
     <table>

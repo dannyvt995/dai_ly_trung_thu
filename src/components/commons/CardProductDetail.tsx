@@ -3,16 +3,16 @@
 import Link from 'next/link'
 import IconFacebook from '../icons/IconFacebook'
 import useCartStore from '@/stores/cart.store'
-import { IProduct } from '@/types/data_type'
+import { IProduct } from '@/types/product.type'
 
 interface Props {
   data: IProduct
 }
 
-const CardProductDetail = ({ data }: Props) => {
+const ProductDetail = ({ data }: Props) => {
   const { addProduct } = useCartStore()
 
-  const handleAddProduct = (data: any) => {
+  const handleAddProduct = (data: IProduct) => {
     addProduct(data)
   }
 
@@ -20,7 +20,7 @@ const CardProductDetail = ({ data }: Props) => {
     <div>
       <div>
         <h4 className='mb-2 text-xl'>Thông tin sản phẩm</h4>
-        <p>{data?.name}</p>
+        <p>{data?.body}</p>
       </div>
       <div className='mt-7 pt-5 pb-[10px] border-y border-dashed border-gray-300'>
         <p>
@@ -56,4 +56,4 @@ const CardProductDetail = ({ data }: Props) => {
   )
 }
 
-export default CardProductDetail
+export default ProductDetail

@@ -64,10 +64,10 @@ export default function Navbar() {
                 <IConSearch size={16} color='white' />
               </span>
             </div>
-            <div className='flex items-center'>
+            <Link href='/gio-hang' className='flex items-center'>
               <IConCart size={20} color='white' />
               <span className='text-red-500'>({quantity})</span>
-            </div>
+            </Link>
           </div>
         </div>
       </MainSection>
@@ -129,15 +129,18 @@ export default function Navbar() {
               >
                 Sản phẩm
               </Link>
-            </li>
-            <li className='max-[900px]:basis-1/2'>
-              <Link
-                href={`/banh-tu-chon`}
-                className='flex px-[14px] py-3 max-[900px]:font-semibold'
-                onClick={() => handleCloseMenu()}
-              >
-                Bánh trung thu tự chọn
-              </Link>
+              <ul className='min-[900px]:absolute min-[900px]:hidden min-[900px]:group-hover:block top-full left-0 min-w-[220px] min-[900px]:bg-white min-[900px]:shadow-contact duration-500'>
+                <li className='p-1 pl-4' onClick={handleCloseMenu}>
+                  <Link href='/san-pham?type=givral' className='capitalize hover:text-red-500'>
+                    Bánh trung thu girval
+                  </Link>
+                </li>
+                <li className='p-1 pl-4' onClick={handleCloseMenu}>
+                  <Link href='/san-pham?type=brodard' className='capitalize hover:text-red-500'>
+                    Bánh trung thu brodard
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className='max-[900px]:basis-1/2'>
               <Link
@@ -150,7 +153,7 @@ export default function Navbar() {
             </li>
             <li className='max-[900px]:basis-1/2'>
               <Link
-                href={`/bang-gia`}
+                href={`#`}
                 className='flex px-[14px] py-3 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
@@ -190,16 +193,3 @@ export default function Navbar() {
     </>
   )
 }
-
-// ;<ul className='min-[900px]:absolute min-[900px]:hidden min-[900px]:group-hover:block top-full left-0 min-w-[220px] min-[900px]:bg-white min-[900px]:shadow-contact duration-500'>
-//   <li className='p-1 pl-4' onClick={handleCloseMenu}>
-//     <Link href='#' className='capitalize hover:text-red-500'>
-//       Bánh trung thu girval
-//     </Link>
-//   </li>
-//   <li className='p-1 pl-4' onClick={handleCloseMenu}>
-//     <Link href='#' className='capitalize hover:text-red-500'>
-//       Bánh trung thu brodard
-//     </Link>
-//   </li>
-// </ul>

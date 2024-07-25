@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-const ProductDetail = () => {
+const DescriptionProductDetail = () => {
   const [open, setOpen] = useState(1)
 
   return (
@@ -83,4 +83,4 @@ const ProductDetail = () => {
   )
 }
 
-export default ProductDetail
+export default DescriptionProductDetail

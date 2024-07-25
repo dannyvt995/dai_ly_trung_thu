@@ -1,5 +1,6 @@
-import CardComboDetail from '@/components/commons/CardComboDetail'
-import ProductDetail from '@/components/commons/ProductDetail'
+import CardProductDetail from '@/components/commons/CardProductDetail'
+import DescriptionProductDetail from '@/components/commons/DescriptionProductDetail'
+
 import data from '@/data/fake.api.json'
 import Image from 'next/image'
 
@@ -46,10 +47,10 @@ export default function ComboDetailPage({ params }: { params: IParams }) {
               </div>
             </div>
             <div className='col-span-6 max-md:col-span-full'>
-              <CardComboDetail data={data} />
+              <CardProductDetail data={data} />
             </div>
           </div>
-          <ProductDetail />
+          <DescriptionProductDetail />
         </div>
       ) : (
         <p>Không tìm thấy sản phẩm</p>

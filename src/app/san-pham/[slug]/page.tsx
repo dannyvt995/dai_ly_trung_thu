@@ -1,5 +1,5 @@
 import CardProductDetail from '@/components/commons/CardProductDetail'
-import ProductDetail from '@/components/commons/ProductDetail'
+import DescriptionProductDetail from '@/components/commons/DescriptionProductDetail'
 import data from '@/data/fake.api.json'
 import Image from 'next/image'
 
@@ -48,7 +48,7 @@ export default function ProductDetailPage({ params }: { params: IParams }) {
               <CardProductDetail data={data}/>
             </div>
           </div>
-          <ProductDetail />
+          <DescriptionProductDetail />
         </div>
       ) : (
         <p>Không tìm thấy sản phẩm</p>

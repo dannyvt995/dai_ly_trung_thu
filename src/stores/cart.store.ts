@@ -1,12 +1,22 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { Product } from './counter-store'
 import { toast } from 'react-toastify'
+import { IProduct } from '@/types/product.type'
+
+type ICartItem = {
+  id: number
+  name: string
+  brand: string
+  type: string
+  quantity: number
+  price: number
+  img: string
+}
 
 interface CartState {
   quantity: number
-  cartItems: Product[]
-  addProduct: (item: Product) => void
+  cartItems: ICartItem[]
+  addProduct: (item: IProduct) => void
   increaseQuantity: (id: number) => void
   decreaseQuantity: (id: number) => void
   removeItemFromCart: (id: number) => void
@@ -88,6 +98,7 @@ const useCartStore = create(
               cartItems: updatedCartItems,
               quantity: get().quantity - itemExists.quantity
             })
+            toast.info('Xóa sản phẩm khỏi đơn hàng thành công')
           }
         }
       },
