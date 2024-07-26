@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     const body = await request.json()
     await transporter.sendMail({
       from: mailOptions.from,
-      to: body.email,
+      to: body.order.email,
       ...generateEmailContent(JSON.stringify(body.data)),
       subject: 'Tư vấn bánh trung thu'
     })
