@@ -14,7 +14,7 @@ const BreadCrumb = ({ breadCrumb }: Props) => {
     <MainSection className='py-10' bgColor='bg-transparent'>
       <ul className='flex items-center gap-x-2 text-white'>
         <li>
-          <Link href='#'>
+          <Link href='/'>
             Trang chủ <span>/</span>
           </Link>
         </li>

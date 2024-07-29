@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: 'Nhà phân phối bánh trung thu 2024 tại Sài gòn - Chiếu khấu tốt'
 }
 
-const getCombo = () => {
-  const comboList = data.products.filter(item => item.type.includes('combo'))
+const getCombo = (type:string) => {
+  const comboList = data.products.filter(item => item.type.includes(`combo/${type}`))
   return comboList
 }
 
@@ -18,15 +18,16 @@ export default async function SanPham({
 }: {
   searchParams: { [key: string]: string | undefined }
 }) {
-  const { slug } = searchParams
+  const { type } = searchParams
 
-  const data = getCombo()
+  const data = getCombo(type as string)
 
   return (
     <div>
-      <div className='p-[10px] mb-4 bg-white flex justify-center'>
+    
+    {/*   <div className='p-[10px] mb-4 bg-white flex justify-center'>
         <button className='border rounded-md py-2 px-4'>Sắp xếp theo:</button>
-      </div>
+      </div> */}
       <div className='grid grid-cols-12 auto-rows-fr gap-[30px]'>
         {data?.map((item) => (
           <div
@@ -37,7 +38,7 @@ export default async function SanPham({
           </div>
         ))}
       </div>
-      <Pagination slug={slug} />
+      {/* <Pagination slug={slug} /> */}
     </div>
   )
 }

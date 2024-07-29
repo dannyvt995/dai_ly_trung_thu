@@ -48,7 +48,7 @@ export default function ProductDetailPage({ params }: { params: IParams }) {
               </div>
             </div>
             <div className='col-span-6 max-md:col-span-full'>
-              {/* <CardProductDetail data={data}/> */}
+              <CardProductDetail data={data}/>
             </div>
           </div>
           <DescriptionProductDetail />

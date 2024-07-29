@@ -20,7 +20,6 @@ export default function ComboDetailPage({ params }: { params: IParams }) {
   const { slug } = params
   let id = slug.split('-').pop()
   const data = getComboId(id)
-
   return (
     <>
       {data ? (

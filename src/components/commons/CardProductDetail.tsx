@@ -24,7 +24,7 @@ const ProductDetail = ({ data }: Props) => {
         <h4 className='mb-2 text-xl'>Thông tin sản phẩm</h4>
         <p>{data?.body}</p>
         <p>
-          {data.codes.map((code: any) => {
+          {data.codes?.map((code: any) => {
             const [id, value] = code.split('/');
             const item = dataJson.products.find(item => item.id == id) as any;
             const codeBanh = item?.trongluong?.[value]?.code ?? 'No code available';
