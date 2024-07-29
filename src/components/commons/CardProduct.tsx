@@ -12,15 +12,15 @@ interface Props {
 const CardProduct = ({ data, href }: Props) => {
   return (
     <div className='flex flex-col justify-between h-full'>
-      <Link href={`${href}/${data.slug}-${data.id}`} className=''>
+      <Link href={`${href}/${data.slug}-${data.id}`} className='h-36 overflow-hidden bg-slate-200'>
         {' '}
-        <ImageLoad src={data.img} alt={'he'} />
+        {/* <ImageLoad src={data.img} alt={'he'} /> */}
       </Link>
-      <div className='p-[10px] flex flex-col justify-start gap-3'>
+      <div className='p-[10px] flex flex-col justify-start gap-3' style={{maxWidth:'80%'}}>
         <h3 className='font-medium'>{data.name}</h3>
       </div>
-      <div className='flex items-center justify-between px-[10px] mb-3'>
-        <p className='text-[#f3650e]'>{data?.price?.toLocaleString()} đ</p>
+      <div className='flex items-center justify-between px-[10px]'>
+        <p className='text-[#f3650e] font-bold'>{data?.price?.toLocaleString()} đ</p>
         <BtnAddToCart data={data}/>
       </div>
       <div></div>

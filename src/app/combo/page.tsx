@@ -24,8 +24,8 @@ export default async function SanPham({
 
   return (
     <div>
-      <div className='p-[10px] mb-4 bg-white'>
-        <button className='border rounded-md py-2 px-4'>Sắp theo:</button>
+      <div className='p-[10px] mb-4 bg-white flex justify-center'>
+        <button className='border rounded-md py-2 px-4'>Sắp xếp theo:</button>
       </div>
       <div className='grid grid-cols-12 auto-rows-fr gap-[30px]'>
         {data?.map((item) => (

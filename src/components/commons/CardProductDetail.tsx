@@ -5,6 +5,8 @@ import IconFacebook from '../icons/IconFacebook'
 import useCartStore from '@/stores/cart.store'
 import { IProduct } from '@/types/product.type'
 
+import dataJson from '@/data/fake.api.json'
+
 interface Props {
   data: IProduct
 }
@@ -21,6 +23,18 @@ const ProductDetail = ({ data }: Props) => {
       <div>
         <h4 className='mb-2 text-xl'>Thông tin sản phẩm</h4>
         <p>{data?.body}</p>
+        <p>
+          {data.codes.map((code: any) => {
+            const [id, value] = code.split('/');
+            const item = dataJson.products.find(item => item.id == id) as any;
+            const codeBanh = item?.trongluong?.[value]?.code ?? 'No code available';
+            return (
+              <div key={id}>
+                <strong>{item?.name}</strong> --- <strong>{codeBanh}</strong>
+              </div>
+            );
+          })}
+        </p>
       </div>
       <div className='mt-7 pt-5 pb-[10px] border-y border-dashed border-gray-300'>
         <p>

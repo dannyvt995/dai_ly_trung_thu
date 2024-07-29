@@ -19,9 +19,10 @@ export default function ProductDetailPage({ params }: { params: IParams }) {
   const { slug } = params
   let id = slug.split('-').pop()
   const data = getProductId(id)
-
+ 
   return (
     <>
+    
       {data ? (
         <div className='p-4 bg-white rounded-md'>
           <h1 className='text-4xl mb-2'>{data?.name}</h1>
@@ -31,9 +32,11 @@ export default function ProductDetailPage({ params }: { params: IParams }) {
               Bánh trung thu {data?.type === 'givral' ? 'Givral' : 'Brodard'}
             </span>{' '}
           </p>
+  
           <div className='grid grid-cols-12 gap-5 mt-4'>
             <div className='col-span-6 max-md:col-span-full'>
-              <div className='w-[397px] h-[267px]'>
+           
+              <div className='w-[397px] h-[267px] '>
                 <Image
                   src={data?.img}
                   alt={data?.name}
@@ -45,7 +48,7 @@ export default function ProductDetailPage({ params }: { params: IParams }) {
               </div>
             </div>
             <div className='col-span-6 max-md:col-span-full'>
-              <CardProductDetail data={data}/>
+              {/* <CardProductDetail data={data}/> */}
             </div>
           </div>
           <DescriptionProductDetail />

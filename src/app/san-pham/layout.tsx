@@ -22,7 +22,7 @@ const ProductLayout = ({
       <MainSection bgColor='bg-slate-100'>
         <div className='grid grid-cols-12 gap-[30px]'>
           <SidebarProduct />
-          <div className='col-span-9 max-lg:col-span-full rounded-md'>{children}</div>
+          <div className='col-span-12 max-lg:col-span-full rounded-md'>{children}</div>
         </div>
       </MainSection>
     </>

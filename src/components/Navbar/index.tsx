@@ -127,7 +127,7 @@ export default function Navbar() {
                 className='flex px-[14px] py-3 hover:text-red-500 max-[900px]:font-semibold'
                 onClick={() => handleCloseMenu()}
               >
-                Sản phẩm
+                Bánh trung thu tự chọn
               </Link>
               <ul className='min-[900px]:absolute min-[900px]:hidden min-[900px]:group-hover:block top-full left-0 min-w-[220px] min-[900px]:bg-white min-[900px]:shadow-contact duration-500'>
                 <li className='p-1 pl-4' onClick={handleCloseMenu}>
