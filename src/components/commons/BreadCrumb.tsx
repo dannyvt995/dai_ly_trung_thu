@@ -9,7 +9,6 @@ interface Props {
 }
 
 const BreadCrumb = ({ breadCrumb }: Props) => {
-  
   return (
     <MainSection className='py-10' bgColor='bg-transparent'>
       <ul className='flex items-center gap-x-2 text-white'>
@@ -19,9 +18,9 @@ const BreadCrumb = ({ breadCrumb }: Props) => {
           </Link>
         </li>
         {breadCrumb?.map((item, index) => (
-          <li key={index}>
+          <li key={index} className='group'>
             <Link href={item.href}>
-              {item.text} <span className='last:hidden'>/</span>
+              {item.text} <span className='group-last:hidden'>/</span>
             </Link>
           </li>
         ))}

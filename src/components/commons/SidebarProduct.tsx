@@ -19,8 +19,14 @@ const SidebarProduct = () => {
       <div className='p-[10px]'>
         <ul className='flex'>
           {lists.map((item, index) => (
-            <li key={index} className='w-6/12 last:border-none border-r border-dashed border-[#c9c9c9]'>
-              <Link href={item.href} className='text-center block text-lg py-[10px] px-[15px] hover:text-red-500'>
+            <li
+              key={index}
+              className='w-6/12 last:border-none border-r border-dashed border-[#c9c9c9]'
+            >
+              <Link
+                href={item.href}
+                className='text-center block text-lg py-[10px] px-[15px] hover:text-red-500'
+              >
                 {item.text}
               </Link>
             </li>

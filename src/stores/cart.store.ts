@@ -9,18 +9,19 @@ type ICartItem = {
   brand: string
   type: string
   quantity: number
-  price: number
+  price?: number
   img: string
+  trongluong: any
 }
 
 interface CartState {
   quantity: number
   cartItems: ICartItem[]
-  addProduct: (item: IProduct) => void
-  increaseQuantity: (id: number) => void
-  decreaseQuantity: (id: number) => void
-  removeItemFromCart: (id: number) => void
-  order: ()=> void
+  addProduct: (item: IProduct, quantity: number, weight: any) => void
+  increaseQuantity: (id: number, weight: any) => void
+  decreaseQuantity: (id: number, weight: any) => void
+  removeItemFromCart: (id: number, weight: any) => void
+  order: () => void
 }
 
 const useCartStore = create(
@@ -28,9 +29,35 @@ const useCartStore = create(
     (set, get) => ({
       quantity: 0,
       cartItems: [],
-      addProduct: (item) => {
+      addProduct: (item, quantity, weight) => {
+        if (item.type !== 'combo/givral' && item.type !== 'comvo/brodard') {
+          const itemExists = get().cartItems.find(
+            (cartItem) =>
+              cartItem.id === item.id && cartItem?.trongluong === weight
+          )
+          if (itemExists) {
+            if (typeof itemExists.quantity === 'number') {
+              itemExists.quantity += quantity
+            }
+            set({
+              cartItems: [...get().cartItems],
+              quantity: (get().quantity += quantity)
+            })
+          } else {
+            set({
+              cartItems: [
+                ...get().cartItems,
+                { ...item, quantity: 1, trongluong: weight }
+              ],
+              quantity: (get().quantity += quantity)
+            })
+          }
+          toast.success('Thêm vào giỏ hàng thành công')
+        }
+      },
+      increaseQuantity: (id: number, weight: any) => {
         const itemExists = get().cartItems.find(
-          (cartItem) => cartItem.id === item.id
+          (cartItem) => cartItem.id === id && cartItem.trongluong === weight
         )
 
         if (itemExists) {
@@ -42,34 +69,11 @@ const useCartStore = create(
             cartItems: [...get().cartItems],
             quantity: (get().quantity += 1)
           })
-        } else {
-          set({
-            cartItems: [...get().cartItems, { ...item, quantity: 1 }],
-            quantity: (get().quantity += 1)
-          })
-        }
-
-        toast.success('Thêm vào giỏ hàng thành công')
-      },
-      increaseQuantity: (id: number) => {
-        const itemExists = get().cartItems.find(
-          (cartItem) => cartItem.id === id
-        )
-
-        if (itemExists) {
-          if (typeof itemExists.quantity === 'number') {
-            itemExists.quantity++
-          }
-
-          set({
-            cartItems: [...get().cartItems],
-            quantity: (get().quantity += 1)
-          })
         }
       },
-      decreaseQuantity: (id: number) => {
+      decreaseQuantity: (id: number, weight: any) => {
         const itemExists = get().cartItems.find(
-          (cartItem) => cartItem.id === id
+          (cartItem) => cartItem.id === id && cartItem.trongluong === weight
         )
 
         if (itemExists) {
@@ -84,22 +88,22 @@ const useCartStore = create(
           }
         }
       },
-      removeItemFromCart: (id: number) => {
+      removeItemFromCart: (id: number, weight: any) => {
         const itemExists = get().cartItems.find(
-          (cartItem) => cartItem.id === id
+          (cartItem) => cartItem.id === id && cartItem.trongluong === weight
+        )
+        const itemExistsIndex = get().cartItems.findIndex(
+          (cartItem) => cartItem.id === id && cartItem.trongluong === weight
         )
 
         if (itemExists) {
-          if (typeof itemExists.quantity === 'number') {
-            const updatedCartItems = get().cartItems.filter(
-              (item) => item.id !== id
-            )
-            set({
-              cartItems: updatedCartItems,
-              quantity: get().quantity - itemExists.quantity
-            })
-            toast.info('Xóa sản phẩm khỏi đơn hàng thành công')
-          }
+          const array = get().cartItems;
+          array.splice(itemExistsIndex, 1)
+          set({
+            cartItems: array,
+            quantity: get().quantity - itemExists.quantity
+          })
+          toast.info('Xóa sản phẩm khỏi đơn hàng thành công')
         }
       },
       order: () => {

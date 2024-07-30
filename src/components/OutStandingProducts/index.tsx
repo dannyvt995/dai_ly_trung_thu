@@ -1,4 +1,3 @@
-import { shuffleArray } from '@/utils/shuffleArray'
 import MainSection from '../commons/MainSection'
 import CardProduct from '../commons/CardProduct'
 import data from '@/data/fake.api.json'

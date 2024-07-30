@@ -6,6 +6,7 @@ import useCartStore from '@/stores/cart.store'
 import { IProduct } from '@/types/product.type'
 
 import dataJson from '@/data/fake.api.json'
+import { FaFacebookSquare } from 'react-icons/fa'
 
 interface Props {
   data: IProduct
@@ -25,44 +26,43 @@ const ProductDetail = ({ data }: Props) => {
         <p>{data?.body}</p>
         <p>
           {data.codes?.map((code: any) => {
-            const [id, value] = code.split('/');
-            const item = dataJson.products.find(item => item.id == id) as any;
-            const codeBanh = item?.trongluong?.[value]?.code ?? 'No code available';
+            const [id, value] = code.split('/')
+            const item = dataJson.products.find((item) => item.id == id) as any
+            const codeBanh =
+              item?.trongluong?.[value]?.code ?? 'No code available'
             return (
               <div key={id}>
                 <strong>{item?.name}</strong> --- <strong>{codeBanh}</strong>
               </div>
-            );
+            )
           })}
         </p>
       </div>
       <div className='mt-7 pt-5 pb-[10px] border-y border-dashed border-gray-300'>
         <p>
           Giá:{' '}
-          {data?.price ? (
+          {/* {data?.price ? (
             <span className='text-[#f3650e]'>
               {data?.price.toLocaleString()} đ
             </span>
-          ) : (
-            <Link href='#' className='text-[#f3650e] font-medium'>
-              Liên hệ
-            </Link>
-          )}
+          ) : ( */}
+          <span className='text-[#f3650e] font-medium'>Liên hệ</span>
+          {/* )} */}
         </p>
-        {data?.price && (
+        {/* {data?.price && (
           <button
             className='w-full bg-[#dc3545] hover:bg-[#c82333] mt-2 py-2 rounded-md text-white'
             onClick={() => handleAddProduct(data)}
           >
             Thêm giỏ hàng
           </button>
-        )}
+        )} */}
       </div>
       <div className='pt-5 pb-[10px]'>
-        <p className='flex'>
+        <p className='flex items-center gap-x-3'>
           Chia sẻ:{' '}
           <Link href='#' className=''>
-            <IconFacebook color='blue' size={24} />
+            <FaFacebookSquare size={24} className='text-blue-500'/>
           </Link>
         </p>
       </div>
