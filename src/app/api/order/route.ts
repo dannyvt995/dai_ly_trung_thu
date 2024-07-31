@@ -16,7 +16,7 @@ const generateEmailContent = (data: any) => {
         `
       <tr>
         <td>
-          <p><strong>${index}</strong></p>
+          <p><strong>${index + 1}</strong></p>
         </td>
         <td>
           <p><strong>${item?.id}</strong></p>
@@ -25,16 +25,28 @@ const generateEmailContent = (data: any) => {
           <p><strong>${item?.name}</strong></p>
         </td>
         <td>
-          <p><strong>Liên hệ</strong></p>
+          <p>
+            ${
+              item.trongluong
+                ? `${(
+                    item?.trongluong?.price * item?.quantity
+                  )?.toLocaleString()} đ`
+                : `${(item?.price * item?.quantity)?.toLocaleString()} đ`
+            }
+          </p>
         </td>
         <td>
           <p><strong>${item?.quantity}</strong></p>
         </td>
         <td>
-          <p></p>
+          <p>${
+            item.trongluong
+              ? `${item.trongluong?.weight}g - ${item.trongluong?.egg} trứng`
+              : ''
+          }</p>
         </td>
         <td>
-          <p></p>
+          <p>${item?.type}</p>
         </td>
         </tr>
         `
@@ -61,10 +73,6 @@ const generateEmailContent = (data: any) => {
       text-align: left;
       padding: 8px;
       }
-  
-      tr:nth-child(even) {
-      background-color: #dddddd;
-      }
       </style>
     </head>
     <body>
@@ -90,7 +98,7 @@ const generateEmailContent = (data: any) => {
               <p><strong>Trọng lượng</strong> (Gram)</p>
             </td>
             <td>
-              <p><strong>Đơn vị tính </strong> (Unit)</p>
+              <p><strong>Loại bánh</strong></p>
             </td>
           </tr>
         </thead>
