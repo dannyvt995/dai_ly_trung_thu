@@ -23,7 +23,6 @@ export default async function SanPham({
   searchParams: { [key: string]: string | undefined }
 }) {
   const { type } = searchParams
-
   const twentyItems = getProduct(type)
 
   const breadCrumb = [

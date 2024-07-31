@@ -1,19 +1,24 @@
 'use client'
 
 import useCartStore from '@/stores/cart.store'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { RiSubtractFill } from 'react-icons/ri'
-import { MdOutlineAdd } from "react-icons/md"
+import { MdOutlineAdd } from 'react-icons/md'
 
 const AddProduct = ({ item }: any) => {
   const { addProduct } = useCartStore()
 
   const [quantity, setQuantity] = useState(1)
-  const [weight, setWeight] = useState(Object.keys(item?.trongluong)[0])
+  const [weight, setWeight] = useState('')
 
   const handleAddToCart = () => {
     addProduct(item, quantity, weight)
   }
+
+  useEffect(()=> {
+    setWeight(Object.keys(item?.trongluong)[0])
+    setQuantity(1)
+  }, [item])
 
   return (
     <div className='flex items-center space-x-2'>
@@ -28,12 +33,11 @@ const AddProduct = ({ item }: any) => {
         className='w-12 h-[30px] outline-none text-center border'
       />
       <button className='size-[30px] flex items-center justify-center border'>
-      <MdOutlineAdd size={18}/>
+        <MdOutlineAdd size={18} />
       </button>
       <select
         className='border p-1'
-        onChange={(e) => setWeight
-          (e.target.value)}
+        onChange={(e) => setWeight(e.target.value)}
       >
         {item.trongluong &&
           Object.keys(item.trongluong).map((key) => {

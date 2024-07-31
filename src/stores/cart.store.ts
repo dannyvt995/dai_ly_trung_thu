@@ -30,7 +30,7 @@ const useCartStore = create(
       quantity: 0,
       cartItems: [],
       addProduct: (item, quantity, weight) => {
-        if (item.type !== 'combo/givral' && item.type !== 'comvo/brodard') {
+        if (item.type !== 'combo/givral' && item.type !== 'combo/brodard') {
           const itemExists = get().cartItems.find(
             (cartItem) =>
               cartItem.id === item.id && cartItem?.trongluong.weight === weight

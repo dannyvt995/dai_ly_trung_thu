@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import IconFacebook from '../icons/IconFacebook'
 import useCartStore from '@/stores/cart.store'
 import { IProduct } from '@/types/product.type'
 

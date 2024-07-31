@@ -8,7 +8,7 @@ const BtnAddToCart = ({ data }: { data: IProduct }) => {
   const { addProduct } = useCartStore()
 
   const handleAddProduct = () => {
-    addProduct(data)
+    // addProduct(data)
   }
 
   return (
