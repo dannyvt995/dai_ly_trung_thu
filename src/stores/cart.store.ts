@@ -11,13 +11,13 @@ type ICartItem = {
   quantity: number
   price?: number
   img: string
-  trongluong: any
+  trongluong?: any
 }
 
 interface CartState {
   quantity: number
   cartItems: ICartItem[]
-  addProduct: (item: IProduct, quantity: number, weight: any) => void
+  addProduct: (item: IProduct, quantity: number, weight?: any) => void
   increaseQuantity: (id: number, weight: any) => void
   decreaseQuantity: (id: number, weight: any) => void
   removeItemFromCart: (id: number, weight: any) => void
@@ -33,7 +33,7 @@ const useCartStore = create(
         if (item.type !== 'combo/givral' && item.type !== 'comvo/brodard') {
           const itemExists = get().cartItems.find(
             (cartItem) =>
-              cartItem.id === item.id && cartItem?.trongluong === weight
+              cartItem.id === item.id && cartItem?.trongluong.weight === weight
           )
           if (itemExists) {
             if (typeof itemExists.quantity === 'number') {
@@ -47,13 +47,41 @@ const useCartStore = create(
             set({
               cartItems: [
                 ...get().cartItems,
-                { ...item, quantity: 1, trongluong: weight }
+                {
+                  ...item,
+                  quantity: quantity,
+                  trongluong: { ...item?.trongluong?.[weight], weight: weight }
+                }
               ],
               quantity: (get().quantity += quantity)
             })
           }
-          toast.success('Thêm vào giỏ hàng thành công')
+        } else {
+          const itemExists = get().cartItems.find(
+            (cartItem) => cartItem.id === item.id
+          )
+          if (itemExists) {
+            if (typeof itemExists.quantity === 'number') {
+              itemExists.quantity += quantity
+            }
+            set({
+              cartItems: [...get().cartItems],
+              quantity: (get().quantity += quantity)
+            })
+          } else {
+            set({
+              cartItems: [
+                ...get().cartItems,
+                {
+                  ...item,
+                  quantity: quantity
+                }
+              ],
+              quantity: (get().quantity += quantity)
+            })
+          }
         }
+        toast.success('Thêm sản phẩm vào giỏ hàng thành công')
       },
       increaseQuantity: (id: number, weight: any) => {
         const itemExists = get().cartItems.find(
@@ -96,13 +124,29 @@ const useCartStore = create(
           (cartItem) => cartItem.id === id && cartItem.trongluong === weight
         )
 
-        if (itemExists) {
-          const array = get().cartItems;
+        if (itemExists && !itemExists.type.includes('combo')) {
+          const array = get().cartItems
           array.splice(itemExistsIndex, 1)
           set({
             cartItems: array,
             quantity: get().quantity - itemExists.quantity
           })
+          toast.info('Xóa sản phẩm khỏi đơn hàng thành công')
+        } else {
+          const itemExists = get().cartItems.find(
+            (cartItem) => cartItem.id === id
+          )
+          const itemExistsIndex = get().cartItems.findIndex(
+            (cartItem) => cartItem.id === id
+          )
+          if (itemExists) {
+            const array = get().cartItems
+            array.splice(itemExistsIndex, 1)
+            set({
+              cartItems: array,
+              quantity: get().quantity - itemExists.quantity
+            })
+          }
           toast.info('Xóa sản phẩm khỏi đơn hàng thành công')
         }
       },

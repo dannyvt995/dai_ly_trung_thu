@@ -138,6 +138,7 @@ const ProductManager = () => {
                           <p>100 đ</p>
                         </div>
                       </div>
+                      <p>Bánh trung thu 2 trứng</p>
                       <button
                         className='mt-3 hover:text-[#fd7e14]'
                         onClick={() => handleDelete(item.id, item.trongluong)}
