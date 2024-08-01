@@ -7,29 +7,29 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 import Modal from '@/components/commons/Modal'
 import CartProduct from '@/components/commons/CartProduct'
+import { IFormOrder } from '@/types/form.order.type'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import Input from '@/components/commons/Input'
+import calculateTotalPrice from '@/utils/calculateTotalPrice'
 
 const ProductManager = () => {
   const [showModal, setShowModal] = useState(false)
-  const [orderInfo, setOrderInfo] = useState({
-    email: '',
-    phone: '',
-    fullName: '',
-    address: '',
-    notes: ''
-  })
+  const [loading, setLoading] = useState(false)
 
   const {
-    cartItems,
-    quantity,
-    order
-  } = useCartStore()
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<IFormOrder>()
 
-  const handleOrder = async (e: any) => {
-    e.preventDefault()
+  const { cartItems, quantity, order } = useCartStore()
+
+  const onSubmit: SubmitHandler<IFormOrder> = async (data: IFormOrder) => {
     try {
+      setLoading(true)
       if (cartItems) {
         const payload = {
-          order: orderInfo,
+          order: data,
           data: cartItems
         }
         const promise = await fetch('/api/order', {
@@ -53,6 +53,7 @@ const ProductManager = () => {
       console.log(e)
     } finally {
       setShowModal(false)
+      setLoading(false)
     }
   }
 
@@ -81,7 +82,10 @@ const ProductManager = () => {
                 <span className='font-medium'>{quantity}</span>
               </p>
               <p className='pb-3'>
-                Thành tiền: <span className='font-medium'>100 đ</span>
+                Thành tiền:{' '}
+                <span className='font-medium'>
+                  {calculateTotalPrice(cartItems)?.toLocaleString()} đ
+                </span>
               </p>
               <hr className='bg-black' />
               <button
@@ -105,93 +109,115 @@ const ProductManager = () => {
 
       <Modal isVisible={showModal} onClose={() => setShowModal(false)}>
         <h3 className='text-xl font-medium mb-3'>Thông tin đặt hàng</h3>
-        <form className='flex flex-col gap-2' onSubmit={handleOrder}>
+        <form className='flex flex-col gap-2' onSubmit={handleSubmit(onSubmit)}>
           <div className=''>
             <label>Họ và tên</label>
-            <input
+            <Input
               type='text'
-              className='block w-full mt-2 outline-none border rounded-md p-2'
-              value={orderInfo.fullName}
-              onChange={(e) =>
-                setOrderInfo((prev) => ({
-                  ...prev,
-                  fullName: e.target.value
-                }))
-              }
               placeholder='Nhập họ và tên'
-              required
+              {...register('fullName', {
+                required: {
+                  value: true,
+                  message: 'Vui lòng nhập họ tên'
+                }
+              })}
             />
+            {errors.fullName?.message && (
+              <p className='text-sm mt-1 text-pink-500'>
+                {errors.fullName?.message}
+              </p>
+            )}
           </div>
           <div className=''>
             <label>Email</label>
-            <input
+            <Input
               type='email'
-              className='block w-full mt-2 outline-none border rounded-md p-2'
-              value={orderInfo.email}
-              onChange={(e) =>
-                setOrderInfo((prev) => ({
-                  ...prev,
-                  email: e.target.value
-                }))
-              }
               placeholder='Nhập địa chỉ email'
-              required
+              {...register('email', {
+                required: 'Vui lòng nhập email',
+                pattern: {
+                  value:
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                  message: 'Email không đúng định dạng'
+                }
+              })}
             />
+            {errors.email?.message && (
+              <p className='text-sm mt-1 text-pink-500'>
+                {errors.email?.message}
+              </p>
+            )}
           </div>
           <div className=''>
             <label>Số điện thoại</label>
-            <input
-              type='phone'
-              className='block w-full mt-2 outline-none border rounded-md p-2'
-              value={orderInfo.phone}
-              onChange={(e) =>
-                setOrderInfo((prev) => ({
-                  ...prev,
-                  phone: e.target.value
-                }))
-              }
-              placeholder='Nhập địa chỉ email'
-              required
+            <Input
+              type='text'
+              placeholder='Số điện thoại'
+              {...register('phone', {
+                required: {
+                  value: true,
+                  message: 'Vui lòng nhập số điện thoại'
+                }
+              })}
             />
+            {errors.phone?.message && (
+              <p className='text-sm mt-1 text-pink-500'>
+                {errors.phone?.message}
+              </p>
+            )}
           </div>
           <div className=''>
             <label>Địa chỉ</label>
-            <input
-              type='address'
-              className='block w-full mt-2 outline-none border rounded-md p-2'
-              value={orderInfo.address}
-              onChange={(e) =>
-                setOrderInfo((prev) => ({
-                  ...prev,
-                  address: e.target.value
-                }))
-              }
-              placeholder='Nhập địa chỉ email'
-              required
+            <Input
+              type='text'
+              placeholder='Địa điểm giao hàng'
+              {...register('address', {
+                required: {
+                  value: true,
+                  message: 'Vui lòng nhập địa chỉ giao hàng'
+                }
+              })}
             />
+            {errors.address?.message && (
+              <p className='text-sm mt-1 text-pink-500'>
+                {errors.address?.message}
+              </p>
+            )}
           </div>
           <div className=''>
             <label>Ghi chú</label>
-            <input
+            <Input
               type='text'
-              className='block w-full mt-2 outline-none border rounded-md p-2'
-              value={orderInfo.notes}
-              onChange={(e) =>
-                setOrderInfo((prev) => ({
-                  ...prev,
-                  notes: e.target.value
-                }))
-              }
-              placeholder='Nhập địa chỉ email'
-              required
+              placeholder='Ghi chú thêm'
+              {...register('notes')}
             />
           </div>
           <div>
             <button
-              className='text-white bg-[#007bff] p-2 rounded-md'
+              disabled={loading}
               type='submit'
+              className='py-2.5 px-10 me-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center'
             >
-              Hoàn tất đơn hàng
+              {loading && (
+                <svg
+                  aria-hidden='true'
+                  role='status'
+                  className='inline w-4 h-4 me-3 text-gray-200 animate-spin dark:text-gray-600'
+                  viewBox='0 0 100 101'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    d='M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z'
+                    fill='currentColor'
+                  />
+                  <path
+                    d='M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z'
+                    fill='#1C64F2'
+                  />
+                </svg>
+              )}
+              {loading ? 'Đang đặt hàng' : 'Đặt hàng'}
             </button>
           </div>
         </form>

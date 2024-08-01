@@ -1,28 +1,20 @@
 import { mailOptions, transporter } from '@/config/config.nodemailer'
-import { Html } from 'next/document'
+import calculateTotalPrice from '@/utils/calculateTotalPrice'
 
-const CONTACT_MESSAGE_FIELDS = {
-  fullName: 'Họ và tên',
-  email: 'Email',
-  phone: 'Số điện thoại',
-  content: 'Nội dung',
-  typeService: 'Loại dịch vụ'
-}
-
-const generateEmailContent = (data: any) => {
+const generateEmailContent = (data: any, orderInfo: any) => {
   const tbody = data
     ?.map(
       (item: any, index: number) =>
         `
       <tr>
         <td>
-          <p><strong>${index + 1}</strong></p>
+          <p>${index + 1}</p>
         </td>
         <td>
-          <p><strong>${item?.id}</strong></p>
+          <p>${item?.id}</p>
         </td>
         <td>
-          <p><strong>${item?.name}</strong></p>
+          <p>${item?.name}</p>
         </td>
         <td>
           <p>
@@ -36,7 +28,7 @@ const generateEmailContent = (data: any) => {
           </p>
         </td>
         <td>
-          <p><strong>${item?.quantity}</strong></p>
+          <p>${item?.quantity}</p>
         </td>
         <td>
           <p>${
@@ -73,9 +65,35 @@ const generateEmailContent = (data: any) => {
       text-align: left;
       padding: 8px;
       }
+      .title {
+        background-color: rgb(220, 173, 243);
+        padding: 10px;
+        color: white;
+        margin-bottom: 5px;
+      }
+
+      .list {
+        list-style: none;
+        padding: 0;
+      }
       </style>
     </head>
     <body>
+<div class="container">
+      <div class="title">
+        <h1>Cảm ơn quý khách</h1>
+      </div>
+      <ul class="list">
+        <li>Khách hàng: ${orderInfo?.fullName}</li>
+        <li>Email: ${orderInfo?.email}</li>
+        <li>Số điện thoại: ${orderInfo?.phone}</li>
+        <li>Địa chỉ: ${orderInfo?.address}</li>
+        <li>Ghi chú: Bạn có thể tư vấn cho tôi được không</li>
+        <li><strong>Tổng tiền: ${calculateTotalPrice(
+          data
+        )?.toLocaleString()} đ</strong></li>
+      </ul>
+      <p>Kính chúc quý khách hàng có một mùa Trung thu thật vui vẻ và ấm áp bên gia đình.💕💕💕</p>
       <table>
         <thead>
           <tr>
@@ -106,6 +124,7 @@ const generateEmailContent = (data: any) => {
           ${tbody}
         </tbody>
       </table>
+    </div>
     </body>
     </html>`
   }
@@ -117,8 +136,8 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: mailOptions.from,
       to: body.order.email,
-      ...generateEmailContent(body.data),
-      subject: 'Tư vấn bánh trung thu'
+      ...generateEmailContent(body.data, body.order),
+      subject: 'Đơn hàng bánh trung thu'
     })
 
     return Response.json({
