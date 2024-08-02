@@ -26,11 +26,10 @@ export default function RootLayout({
       <body>
         <CounterStoreProvider>
           <>
-            <div className='fixed top-0 left-0 w-full h-screen bg-breadCrumb z-[-10]'></div>
+            {/* <div className='fixed top-0 left-0 w-full h-screen bg-breadCrumb z-[-10]'></div> */}
             <Navbar />
             {children}
-            <Info />
-            <div className='w-full h-[400px] bg-white border-b-2 border-orange-500'>
+            <div className='w-full h-[400px] bg-white border-b-mid-autumn-festival border-b'>
               <GoogleMap />
             </div>
             <Footer />

@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import ImageLoad from '../ImageLoad'
-import { FaCartPlus } from 'react-icons/fa'
 import { IProduct } from '@/types/product.type'
+import Image from 'next/image'
 
 interface Props {
   data: IProduct
@@ -13,10 +12,15 @@ const CardProduct = ({ data, href }: Props) => {
     <div className='flex flex-col justify-between h-full'>
       <Link
         href={`${href}/${data.slug}-${data.id}`}
-        className='h-36 overflow-hidden bg-slate-200'
+        className='h-[321px] bg-slate-200 group overflow-hidden'
       >
-        {' '}
-        {/* <ImageLoad src={data.img} alt={'he'} /> */}
+        <Image
+          src='/cake-demo.jpg'
+          width={280}
+          height={321}
+          alt={data?.name}
+          className='w-full h-full group-hover:scale-105 duration-300'
+        />
       </Link>
       <div
         className='p-[10px] flex flex-col justify-start gap-3'
@@ -29,10 +33,6 @@ const CardProduct = ({ data, href }: Props) => {
           Liên hệ
         </Link>
       </p>
-      {/* <div className='flex items-center justify-between px-[10px]'>
-        <p className='text-[#f3650e] font-bold'>{data?.price?.toLocaleString()} đ</p>
-        <BtnAddToCart data={data}/>
-      </div> */}
     </div>
   )
 }

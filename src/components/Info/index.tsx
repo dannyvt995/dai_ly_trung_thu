@@ -4,7 +4,7 @@ import { emailInfo, locationInfo, phoneInfo } from '../../../public/icon'
 
 export default function Info() {
   return (
-    <MainSection className='py-11 text-white' bgColor='bg-green-900'>
+    <MainSection className='py-11 text-white' bgColor='bg-mid-autumn-festival'>
       <div className='grid grid-cols-12 gap-[30px]'>
         <div className='col-span-4 max-md:col-span-full flex items-center gap-x-5'>
           <div className='w-[40px] h-[40px] bg-orange-500 rounded-full flex items-center justify-center'>

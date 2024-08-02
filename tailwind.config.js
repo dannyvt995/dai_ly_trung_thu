@@ -17,6 +17,17 @@ module.exports = {
       },
       backgroundImage: {
         'breadCrumb': 'url(/subbanner.jpg)'
+      },
+      colors: {
+        'gray-light': '#555555',
+        'gray-medium': '#51565b',
+        'mid-autumn-festival': '#d71f27'
+      },
+      backgroundColor: {
+        'orange-light': '#e73c13'
+      },
+      fontFamily: {
+        titleBanner: ['fontTitleBanner', 'sans-serif']
       }
     },
   },
