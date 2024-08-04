@@ -43,7 +43,7 @@ const AddProduct = ({ item }: any) => {
   }, [item])
 
   return (
-    <div className='flex items-center space-x-2'>
+    <div className='flex flex-wrap items-center gap-2'>
       <div className='flex items-center gap-x-2'>
         <button
           className='size-[40px] rounded-md flex items-center justify-center border'
