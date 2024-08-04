@@ -41,7 +41,7 @@ export default function ComboDetailPage({ params }: { params: IParams }) {
     <>
       <BreadCrumb breadCrumb={breadCrumb} />
 
-      <MainSection className='py-10'>
+      <MainSection className='py-10 bg-white'>
         {data ? (
           <div className='p-4 bg-white rounded-md'>
             <h1 className='text-4xl mb-2'>{data?.name}</h1>

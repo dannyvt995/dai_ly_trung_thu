@@ -12,7 +12,7 @@ export default function TrangChu() {
       <MainSection className='bg-white'>
         <div className='flex flex-col gap-20'>
           <div>
-            <h3 className='font-titleBanner text-5xl text-center'>
+            <h3 className='font-titleBanner text-5xl max-md:text-4xl text-center'>
               Welcome to MoonCake Store
             </h3>
             <p className='text-center'>
@@ -46,7 +46,6 @@ export default function TrangChu() {
           </div>
         </div>
       </MainSection>
-      <div className='bg-fixed bg-parallax-home fixed top-0 left-0 w-full h-screen -z-[100] brightness-50'></div>
     </main>
   )
 }

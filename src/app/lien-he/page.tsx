@@ -19,7 +19,7 @@ export default function page() {
   return (
     <>
       <BreadCrumb breadCrumb={breadCrumb} />
-      <MainSection>
+      <MainSection className='bg-white'>
         <div className='grid grid-cols-12 gap-[15px]'>
           <div className='col-span-6 max-md:col-span-full bg-gray-100 overflow-hidden rounded-2xl'>
             <GoogleMap />

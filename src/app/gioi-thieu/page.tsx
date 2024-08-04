@@ -22,18 +22,20 @@ export default function page() {
     <>
       <BreadCrumb breadCrumb={breadCrumb} />
 
-      <MainSection className='py-10 px-[15px]'>
+      <MainSection className='py-10 px-[15px] bg-white'>
         <div>
-          <h1 className='text-[1.75rem] mb-2'>Giới thiệu</h1>
+          <h1 className='text-5xl text-mid-autumn-festival mb-2 font-titleBanner'>
+            Giới thiệu
+          </h1>
           <div>
-            <h2 className='text-center text-[#fd7e14] font-medium underline my-7'>
-              Bánh trung thu CQ MART
+            <h2 className='text-center text-5xl font-titleBanner my-7'>
+              Bánh Trung thu 
             </h2>
-            <h2 className='text-center text-[#fd7e14] my-7 leading-10'>
+            <h2 className='text-center  my-7 leading-10'>
               Chuyên Phân Phối Các Loại Bánh Trung Thu Givral - Brodard - Kinh
               Đô - Như Lan- Bibica-Casahana- taithong{' '}
             </h2>
-            <h2 className='text-center text-[#fd7e14] my-7'>
+            <h2 className='text-center  my-7'>
               CK tới 30% - in logo công ty - Giao hàng nhanh, miễn phí-Xuất Hóa
               Đơn VAT
             </h2>

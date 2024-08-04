@@ -36,24 +36,24 @@ export default async function SanPham({
     <div>
       <BreadCrumb breadCrumb={breadCrumb} />
 
-      <MainSection bgColor='bg-slate-100'>
+      <MainSection bgColor='bg-white'>
         <div className='grid grid-cols-12 gap-[30px]'>
           <SidebarProduct />
           <div className='col-span-12 max-lg:col-span-full rounded-md'>
             {type
               ? twentyItems?.map((item, index) => (
                   <div className='space-y-4' key={index}>
-                    <div className='flex items-center justify-between border-b pb-2'>
-                      <div>
-                        <p className='font-medium'>{item.name}</p>
+                    <div className='flex flex-wrap items-center justify-between py-4'>
+                      <div className='max-[1000px]:basis-full'>
+                        <p className=''>{item.name}</p>
                         <Link
-                          className='text-blue-600'
+                          className='block w-fit text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:w-[0px] after:hover:w-full after:h-[2px] after:bg-blue-500 after:duration-500'
                           href={`/san-pham/${item.slug}-${item.id}`}
                         >
                           Xem thêm
                         </Link>
                       </div>
-                      <AddProduct item={item}/>
+                      <AddProduct item={item} />
                     </div>
                   </div>
                 ))

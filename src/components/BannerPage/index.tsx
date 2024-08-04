@@ -34,53 +34,52 @@ export default function BannerPage() {
   ]
 
   return (
-    <>
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={1}
-        effect={'fade'}
-        centeredSlides={true}
-        fadeEffect={{ crossFade: true }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: true
-        }}
-        modules={[Navigation, Pagination, Autoplay, EffectFade]}
-        // onSlideChange={() => console.log('slide change')}
-        // onSwiper={(swiper) => console.log(swiper)}
-      >
-        {listBanners.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className='relative min-h-[420px] py-6'>
-              <div className='py-12 my-12'>
-                <div className='flex justify-center'>
-                  <div className='basis-4/5 flex flex-col items-center gap-4 text-white'>
-                    <h2 className='text-8xl font-titleBanner'>{item.title}</h2>
-                    <p className='max-w-[750px] text-4xl text-center font-titleBanner'>
-                      {item.desc}
-                    </p>
-                    <Link
-                      href='/san-pham'
-                      className='block w-fit rounded-full py-3 px-5 bg-mid-autumn-festival text-4xl font-titleBanner'
-                    >
-                      Shopping thôi
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-[100] bg-white'>
-                <Image
-                  src={item.image}
-                  width={item.image.width}
-                  height={item.image.height}
-                  alt='banner-banh-trung-thu'
-                  className='w-full h-auto blur-[5px]'
-                />
+    <Swiper
+      spaceBetween={10}
+      slidesPerView={1}
+      effect={'fade'}
+      centeredSlides={true}
+      fadeEffect={{ crossFade: true }}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: true
+      }}
+      className='z-30'
+      modules={[Navigation, Pagination, Autoplay, EffectFade]}
+      // onSlideChange={() => console.log('slide change')}
+      // onSwiper={(swiper) => console.log(swiper)}
+    >
+      {listBanners.map((item, index) => (
+        <SwiperSlide key={index}>
+          <div className='relative h-[500px] overflow-hidden'>
+            <div className='border h-full flex items-center justify-center'>
+              <div className='basis-4/5 text-center flex flex-col items-center gap-4 text-white'>
+                <h2 className='text-8xl max-xl:text-6xl max-md:text-5xl font-titleBanner'>
+                  {item.title} 
+                </h2>
+                <p className='max-w-[750px] text-4xl max-md:text-3xl text-center font-titleBanner'>
+                  {item.desc}
+                </p>
+                <Link
+                  href='/san-pham'
+                  className='block w-fit rounded-full py-3 px-5 bg-mid-autumn-festival text-4xl max-md:text-xl font-titleBanner'
+                >
+                  Shopping thôi
+                </Link>
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+            <div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-[10] bg-white'>
+              <Image
+                src={item.image}
+                width={item.image.width}
+                height={item.image.height}
+                alt='banner-banh-trung-thu'
+                className="object-cover bg-no-repeat object-center w-full h-full blur-[4px]" 
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   )
 }

@@ -25,7 +25,7 @@ const CartProduct = ({ item }: any) => {
       key={item.id}
     >
       <div className='col-span-3'>
-        <div className='w-[150px] h-[150px] border bg-gray-200'>
+        <div className='border bg-gray-200'>
           <Image
             src={item.img}
             alt={item.name}
@@ -38,9 +38,9 @@ const CartProduct = ({ item }: any) => {
       </div>
       <div className='col-span-9'>
         <div>
-          <div className='flex flex-wrap max-md:flex max-md:flex-col max-md:gap-y-2'>
-            <p className='basis-1/2 max-md:basis-full md:pr-2'>{item.name}</p>
-            <div className='flex items-center basis-1/4 max-md:basis-full'>
+          <div className='flex justify-between flex-wrap max-md:flex max-md:flex-col max-md:gap-y-2'>
+            <p className='basis-2/3 max-md:basis-full md:pr-2'>{item.name}</p>
+            <div className='flex items-center max-md:basis-full'>
               <button
                 className='size-[30px] text-center font-medium border'
                 onClick={() => handleDecreaseQuantity(item.id, item.trongluong)}
@@ -60,7 +60,14 @@ const CartProduct = ({ item }: any) => {
                 +
               </button>
             </div>
-            <div className='flex items-center basis-1/4 max-md:basis-full'>
+          </div>
+          <div className='flex items-center gap-x-1 mt-1'>
+            {item.trongluong && (
+              <p className='text-nowrap'>
+                {item.trongluong?.egg} Trứng - {item.trongluong?.weight}g -
+              </p>
+            )}
+            <div className='flex items-center max-md:basis-full'>
               {item.trongluong ? (
                 <p className=''>
                   {(item.trongluong?.price * item.quantity)?.toLocaleString()} đ
@@ -70,13 +77,8 @@ const CartProduct = ({ item }: any) => {
               )}
             </div>
           </div>
-          {item.trongluong && (
-            <p className='text-sm'>
-              {item.trongluong?.egg} Trứng - {item.trongluong?.weight} g
-            </p>
-          )}
           <button
-            className=' hover:text-[#fd7e14]'
+            className=' hover:text-mid-autumn-festival'
             onClick={() => handleDelete(item.id, item.trongluong)}
           >
             Xóa

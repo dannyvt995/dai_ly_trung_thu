@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Widget() {
   return (
     <section>
-      <div className='fixed bottom-2 left-3'>
+      <div className='fixed bottom-2 left-3 z-[998]'>
         <Link
           href='https://zalo.me/0934127409'
           className='relative flex size-[50px]'

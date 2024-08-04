@@ -9,7 +9,7 @@ interface Props {
 
 const CardProduct = ({ data, href }: Props) => {
   return (
-    <div className='flex flex-col justify-between h-full'>
+    <div className='flex flex-col justify-between h-full pb-2'>
       <Link
         href={`${href}/${data.slug}-${data.id}`}
         className='h-[321px] bg-slate-200 group overflow-hidden'

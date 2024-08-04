@@ -6,10 +6,10 @@ export default function OutStandingProducts() {
 
   return (
     <div className=''>
-      <h3 className='font-titleBanner text-5xl text-center mb-3'>
+      <h3 className='font-titleBanner text-5xl  max-md:text-4xl  text-center mb-3'>
         Sản phẩm nổi bật
       </h3>
-      <p className='text-center font-titleBanner text-3xl mb-3'>
+      <p className='text-center font-titleBanner text-3xl max-md:text-2xl mb-3'>
         "Hương vị khó quên, tan chảy trên đầu lưỡi."
       </p>
       <div className='grid grid-cols-12 gap-[30px]'>

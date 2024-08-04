@@ -66,7 +66,7 @@ export default function FormContact() {
               className='block w-full py-2 px-4 border border-[#ccc] placeholder-gray-700 rounded-[4px] outline-none mb-4'
             ></textarea>
             <div>
-              <button type='submit' className='py-[11px] px-[30px] text-lg uppercase bg-[#ff6517] text-white rounded-md'>GỬI LIÊN HỆ</button>
+              <button type='submit' className='py-[11px] px-[30px] text-lg uppercase bg-mid-autumn-festival text-white rounded-md'>GỬI LIÊN HỆ</button>
             </div>
           </form>
         </div>

@@ -9,12 +9,15 @@ import { PiYoutubeLogoLight } from 'react-icons/pi'
 import { PiInstagramLogoThin } from 'react-icons/pi'
 import { IoSearchOutline } from 'react-icons/io5'
 import { MdOutlineShoppingCart } from 'react-icons/md'
-import { IoMdArrowDropdown, IoMdClose } from 'react-icons/io'
+import { IoMdClose } from 'react-icons/io'
 import { HiOutlineBars3 } from 'react-icons/hi2'
 import { useState } from 'react'
+import NavItem from './NavItem'
+import useCartStore from '@/stores/cart.store'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { quantity } = useCartStore()
 
   const listContact = [
     {
@@ -39,7 +42,6 @@ export default function Navbar() {
     {
       id: 1,
       title: 'Sản phẩm',
-      href: '#',
       subMenu: [
         {
           title: 'Bánh trung thu Givral',
@@ -54,7 +56,6 @@ export default function Navbar() {
     {
       id: 2,
       title: 'Combo',
-      href: '#',
       subMenu: [
         {
           title: 'Bánh trung thu Givral',
@@ -74,7 +75,7 @@ export default function Navbar() {
     {
       id: 4,
       title: 'Giới thiệu',
-      href: '#'
+      href: '/gioi-thieu'
     },
     {
       id: 5,
@@ -102,7 +103,7 @@ export default function Navbar() {
             <span className='flex items-center justify-center size-[25px] bg-mid-autumn-festival rounded-full'>
               <RiPhoneFill size={16} className='text-white' />
             </span>
-            <span>12345-67-8910</span>
+            <span>093 412 7409</span>
           </Link>
         </div>
         <div className='basis-1/3 max-md:basis-full flex justify-center'>
@@ -146,44 +147,18 @@ export default function Navbar() {
             <ul
               className={`flex max-md:flex-col items-center uppercase md:gap-6 max-md:fixed top-0 ${
                 isOpen ? 'right-0' : '-right-full'
-              } duration-500 max-md:h-screen max-md:w-4/5 max-md:bg-white max-md:z-[999]`}
+              } duration-500 max-md:h-[100vh] max-md:w-4/5 bg-white z-[999]`}
             >
               <li className='md:hidden flex items-center justify-between w-full p-4'>
-                <p>Menu</p>
+                <p className='text-2xl'>Menu</p>
                 <IoMdClose
-                  size={24}
+                  size={35}
                   className='text-gray-light cursor-pointer'
-                  onClick={()=> {
-                    setIsOpen(false)
-                  }}
+                  onClick={() => handleClose()}
                 />
               </li>
               {listMenu.map((item) => (
-                <li key={item.id} className='group relative max-md:w-full'>
-                  <p
-                    // href={item.href}
-                    className='flex items-center p-4 text-gray-medium cursor-pointer'
-                  >
-                    {item.title} {item.subMenu && <IoMdArrowDropdown />}
-                  </p>
-                  {item.subMenu && (
-                    <ul
-                      className={`hidden md:group-hover:block md:absolute 
-                      top-full bg-white shadow-lg border border-slate-300 text-gray-medium z-[999]`}
-                    >
-                      {item.subMenu.map((item, index) => (
-                        <li key={index} className='min-w-52'>
-                          <Link
-                            href={item.href}
-                            className='block w-full py-2 px-4 text-nowrap'
-                          >
-                            {item.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
+                <NavItem item={item} key={item.id} onClose={handleClose} />
               ))}
             </ul>
           </div>
@@ -191,9 +166,10 @@ export default function Navbar() {
             <div>
               <IoSearchOutline size={22} />
             </div>
-            <div>
-              <MdOutlineShoppingCart size={22} />
-            </div>
+            <Link href='/gio-hang' className='flex items-center'>
+              <MdOutlineShoppingCart size={22} /> 
+              <p className='text-mid-autumn-festival'>({quantity})</p>
+            </Link>
           </div>
         </nav>
       </div>

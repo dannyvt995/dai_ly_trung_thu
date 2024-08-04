@@ -25,11 +25,11 @@ export default function RootLayout({
       <body>
         <CounterStoreProvider>
           <>
-            {/* <div className='fixed top-0 left-0 w-full h-screen bg-breadCrumb z-[-10]'></div> */}
             <Navbar />
             {children}
             <Footer />
             <Widget />
+            <div className='bg-fixed bg-parallax-home fixed top-0 left-0 w-full h-screen -z-[100] brightness-50'></div>
             <ToastContainer
               position='top-right'
               autoClose={5000}

@@ -15,7 +15,7 @@ const AddProduct = ({ item }: any) => {
     addProduct(item, quantity, weight)
   }
 
-  const handleOnChange = (e: any)=> {
+  const handleOnChange = (e: any) => {
     setWeight(e.target.value)
     setQuantity(1)
   }
@@ -23,12 +23,12 @@ const AddProduct = ({ item }: any) => {
   const handleQuantity = (str: 'increase' | 'decrease') => {
     switch (str) {
       case 'increase':
-        if(quantity >= 1) {
+        if (quantity >= 1) {
           setQuantity((prev) => prev + 1)
         }
         break
       case 'decrease':
-        if(quantity > 1) {
+        if (quantity > 1) {
           setQuantity((prev) => prev - 1)
         }
         break
@@ -44,43 +44,45 @@ const AddProduct = ({ item }: any) => {
 
   return (
     <div className='flex items-center space-x-2'>
-      <button
-        className='size-[30px] flex items-center justify-center border'
-        onClick={() => handleQuantity('decrease')}
-      >
-        <RiSubtractFill />
-      </button>
-      <input
-        type='number'
-        value={quantity}
-        onChange={(e) => setQuantity(+e.target.value)}
-        min={1}
-        className='w-12 h-[30px] outline-none text-center border'
-      />
-      <button
-        className='size-[30px] flex items-center justify-center border'
-        onClick={() => handleQuantity('increase')}
-      >
-        <MdOutlineAdd size={18} />
-      </button>
-      <select
-        className='border p-1'
-        onChange={handleOnChange}
-      >
-        {item.trongluong &&
-          Object.keys(item.trongluong).map((key) => {
-            const trongluongDetails =
-              item.trongluong[key as keyof typeof item.trongluong] // Sử dụng as
-            return (
-              <option key={key} value={key}>
-                {key}g {JSON.stringify(trongluongDetails)}
-              </option>
-            )
-          })}
-      </select>
-      <button className='text-red-600' onClick={handleAddToCart}>
-        🛒
-      </button>
+      <div className='flex items-center gap-x-2'>
+        <button
+          className='size-[40px] rounded-md flex items-center justify-center border'
+          onClick={() => handleQuantity('decrease')}
+        >
+          <RiSubtractFill />
+        </button>
+        <input
+          type='number'
+          value={quantity}
+          onChange={(e) => setQuantity(+e.target.value)}
+          min={1}
+          className='w-[70px] rounded-md h-10 outline-none text-center border'
+        />
+        <button
+          className='size-[40px] rounded-md flex items-center justify-center border'
+          onClick={() => handleQuantity('increase')}
+        >
+          <MdOutlineAdd size={18} />
+        </button>
+      </div>
+      <div className='flex items-center gap-x-2'>
+        <select className='border h-10 bg-white px-2 rounded-md outline-none' onChange={handleOnChange}>
+          {item.trongluong &&
+            Object.keys(item.trongluong).map((key) => {
+              const trongluongDetails =
+                item.trongluong[key as keyof typeof item.trongluong] // Sử dụng as
+              return (
+                <option key={key} value={key}>
+                  {key}g - {trongluongDetails?.egg} Trứng -{' '}
+                  {trongluongDetails?.price?.toLocaleString()} đ
+                </option>
+              )
+            })}
+        </select>
+        <button className='text-red-600' onClick={handleAddToCart}>
+          🛒
+        </button>
+      </div>
     </div>
   )
 }

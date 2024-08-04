@@ -20,11 +20,11 @@ const Modal = ({
 
   return (
     <div
-      className='fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center'
+      className='fixed inset-0 h-screen bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center z-[9999]'
       id='wrapper'
       onClick={handleClickOutside}
     >
-      <div className='w-[600px] bg-white rounded-md p-5'>
+      <div className='w-[600px] bg-white/85 rounded-md p-5'>
         <div className=''>
           <div className='flex justify-end'>
             <button onClick={() => onClose()}>
