@@ -16,7 +16,8 @@ module.exports = {
         'circle-cake': '1px 1px 6px #4e4e4e'
       },
       backgroundImage: {
-        'breadCrumb': 'url(/subbanner.jpg)'
+        'breadCrumb': 'url(/subbanner.jpg)',
+        'parallax-home': 'url(/parallax/home-parallax.jpg)'
       },
       colors: {
         'gray-light': '#555555',

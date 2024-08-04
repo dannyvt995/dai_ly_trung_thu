@@ -9,9 +9,13 @@ import { PiYoutubeLogoLight } from 'react-icons/pi'
 import { PiInstagramLogoThin } from 'react-icons/pi'
 import { IoSearchOutline } from 'react-icons/io5'
 import { MdOutlineShoppingCart } from 'react-icons/md'
-import { IoMdArrowDropdown } from 'react-icons/io'
+import { IoMdArrowDropdown, IoMdClose } from 'react-icons/io'
+import { HiOutlineBars3 } from 'react-icons/hi2'
+import { useState } from 'react'
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
   const listContact = [
     {
       href: '#',
@@ -79,18 +83,29 @@ export default function Navbar() {
     }
   ]
 
+  const handleOpenMenu = () => {
+    setIsOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsOpen(false)
+  }
+
   return (
-    <header>
-      <div className='flex items-center py-4 px-5'>
-        <div className='basis-1/3'>
-          <Link href='#' className='flex items-center gap-x-1'>
+    <header className='bg-white'>
+      <div className='flex flex-wrap max-md:gap-y-3 items-center py-4 px-5'>
+        <div className='basis-1/3 max-md:basis-full'>
+          <Link
+            href='#'
+            className='flex items-center max-md:justify-center gap-x-1'
+          >
             <span className='flex items-center justify-center size-[25px] bg-mid-autumn-festival rounded-full'>
               <RiPhoneFill size={16} className='text-white' />
             </span>
             <span>12345-67-8910</span>
           </Link>
         </div>
-        <div className='basis-1/3 flex justify-center'>
+        <div className='basis-1/3 max-md:basis-full flex justify-center'>
           <div className='w-[150px]'>
             <Link href='/'>
               <Image
@@ -103,8 +118,8 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-        <div className='basis-1/3'>
-          <ul className='flex items-center gap-3 md:justify-end'>
+        <div className='basis-1/3 max-md:basis-full'>
+          <ul className='flex items-center gap-3 max-md:gap-6 md:justify-end justify-center'>
             {listContact.map((item, index) => (
               <li key={index}>
                 <Link href='#'>
@@ -115,23 +130,53 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      <div className='border-t px-5'>
+      <div className='border-t px-5 max-md:py-3'>
         <nav className='flex items-center'>
-          <div className='flex-1 flex items-center justify-center'>
-            <ul className='flex items-center uppercase md:gap-6'>
+          <div className='flex-1  flex items-center md:justify-center'>
+            <div className='md:hidden cursor-pointer' onClick={handleOpenMenu}>
+              <HiOutlineBars3 size={30} />
+            </div>
+            <div
+              className={`${
+                isOpen
+                  ? 'max-md:fixed max-md:block top-0 left-0 max-md:h-screen max-md:w-full backdrop-brightness-50 bg-black/10 z-[998]'
+                  : 'hidden'
+              }`}
+            ></div>
+            <ul
+              className={`flex max-md:flex-col items-center uppercase md:gap-6 max-md:fixed top-0 ${
+                isOpen ? 'right-0' : '-right-full'
+              } duration-500 max-md:h-screen max-md:w-4/5 max-md:bg-white max-md:z-[999]`}
+            >
+              <li className='md:hidden flex items-center justify-between w-full p-4'>
+                <p>Menu</p>
+                <IoMdClose
+                  size={24}
+                  className='text-gray-light cursor-pointer'
+                  onClick={()=> {
+                    setIsOpen(false)
+                  }}
+                />
+              </li>
               {listMenu.map((item) => (
-                <li key={item.id} className='group relative'>
-                  <Link
-                    href={item.href}
-                    className='flex items-center p-4 text-gray-medium'
+                <li key={item.id} className='group relative max-md:w-full'>
+                  <p
+                    // href={item.href}
+                    className='flex items-center p-4 text-gray-medium cursor-pointer'
                   >
                     {item.title} {item.subMenu && <IoMdArrowDropdown />}
-                  </Link>
+                  </p>
                   {item.subMenu && (
-                    <ul className='hidden group-hover:block absolute top-full bg-white shadow-lg border border-slate-300 text-gray-medium z-[999]'>
+                    <ul
+                      className={`hidden md:group-hover:block md:absolute 
+                      top-full bg-white shadow-lg border border-slate-300 text-gray-medium z-[999]`}
+                    >
                       {item.subMenu.map((item, index) => (
                         <li key={index} className='min-w-52'>
-                          <Link href={item.href} className='block w-full py-2 px-4 text-nowrap'>
+                          <Link
+                            href={item.href}
+                            className='block w-full py-2 px-4 text-nowrap'
+                          >
                             {item.title}
                           </Link>
                         </li>

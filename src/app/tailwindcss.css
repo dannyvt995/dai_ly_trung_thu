@@ -8,3 +8,7 @@
   font-weight: 400;
   src: url("/font/Allura-Regular.ttf") format("truetype");
 }
+
+html {
+  scroll-behavior: smooth;
+}

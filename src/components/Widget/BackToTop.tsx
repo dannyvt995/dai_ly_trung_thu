@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import IconArrow from '../icons/IconArrow'
+import { MdOutlineKeyboardArrowUp } from 'react-icons/md'
 
 const BackToTop = () => {
   const [showBtn, setShowBtn] = useState(false)
@@ -27,10 +28,10 @@ const BackToTop = () => {
     <button
       className={`${
         showBtn ? 'flex' : 'hidden'
-      } fixed bottom-[2px] right-1 w-[50px] h-[50px] bg-white shadow-contact p-2 rounded-lg border border-gray-300 flex items-center justify-center`}
+      } fixed bottom-2 right-1 w-[50px] h-[50px] bg-mid-autumn-festival shadow-contact p-2 rounded-lg border border-gray-300 flex items-center justify-center`}
       onClick={scrollToTop}
     >
-      <IconArrow color='white' size={24}/>
+      <MdOutlineKeyboardArrowUp size={24} className='text-white'/>
     </button>
   )
 }

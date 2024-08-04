@@ -8,7 +8,7 @@ interface Props {
 
 const MainSection = ({ children, className, bgColor }: Props) => {
   const classNameCus = className ? className : ''
-  const bgColorCus = bgColor ? bgColor : 'bg-white'
+  const bgColorCus = bgColor ? bgColor : ''
   return (
     <div className={`w-full py-10 px-[15px] ${classNameCus} ${bgColorCus}`}>
       <div

@@ -68,13 +68,13 @@ export default function BannerPage() {
                   </div>
                 </div>
               </div>
-              <div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-[100]'>
+              <div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-[100] bg-white'>
                 <Image
                   src={item.image}
                   width={item.image.width}
                   height={item.image.height}
                   alt='banner-banh-trung-thu'
-                  className='w-full h-auto blur-[7px]'
+                  className='w-full h-auto blur-[5px]'
                 />
               </div>
             </div>

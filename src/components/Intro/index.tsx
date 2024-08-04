@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import MainSection from '../commons/MainSection'
 import Image from 'next/image'
 
 export default function Intro() {
   return (
-    <MainSection className='py-16 px-[15px]'>
+    <div className='py-16 px-[15px]'>
       <div className='grid grid-cols-12 place-items-center gap-[30px]'>
         <div className='col-span-6 max-md:col-span-full'>
           <div>
@@ -37,6 +36,6 @@ export default function Intro() {
           </p>
         </div>
       </div>
-    </MainSection>
+    </div>
   )
 }

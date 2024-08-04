@@ -3,11 +3,13 @@ import BannerPage from '@/components/BannerPage'
 import Intro from '@/components/Intro'
 import OutStandingProducts from '@/components/OutStandingProducts'
 import MainSection from '@/components/commons/MainSection'
+import { BsSend } from 'react-icons/bs'
+
 export default function TrangChu() {
   return (
     <main>
       <BannerPage />
-      <MainSection>
+      <MainSection className='bg-white'>
         <div className='flex flex-col gap-20'>
           <div>
             <h3 className='font-titleBanner text-5xl text-center'>
@@ -24,8 +26,27 @@ export default function TrangChu() {
           </div>
           <OutStandingProducts />
         </div>
+        <Intro />
+        <div></div>
       </MainSection>
-      <Intro />
+      <MainSection>
+        <div className='flex flex-col items-center gap-5'>
+          <div className='text-center text-white'>
+            <h3 className='text-4xl font-titleBanner'>Liên hệ chúng tôi</h3>
+            <p>Sign Up for our newsletter and never miss any offers</p>
+          </div>
+          <div className='h-12 flex items-center rounded-l-md rounded-r-md overflow-hidden'>
+            <input
+              placeholder='Địa chỉ email của bạn'
+              className='h-full w-[300px] px-2 border outline-none placeholder:font-light'
+            />
+            <button className='h-full px-4 bg-mid-autumn-festival'>
+              <BsSend size={20} className='text-white'/>
+            </button>
+          </div>
+        </div>
+      </MainSection>
+      <div className='bg-fixed bg-parallax-home fixed top-0 left-0 w-full h-screen -z-[100] brightness-50'></div>
     </main>
   )
 }
