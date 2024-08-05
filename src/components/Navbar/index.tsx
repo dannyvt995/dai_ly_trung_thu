@@ -74,13 +74,22 @@ export default function Navbar() {
     },
     {
       id: 4,
-      title: 'Giới thiệu',
-      href: '/gioi-thieu'
+      title: 'Về chúng tôi',
+      subMenu: [
+        {
+          title: 'Giới thiệu',
+          href: '/gioi-thieu'
+        },
+        {
+          title: 'Liên hệ',
+          href: '/lien-he'
+        }
+      ]
     },
     {
       id: 5,
-      title: 'Liên hệ',
-      href: '/lien-he'
+      title: 'Blog',
+      href: '/blog'
     }
   ]
 
@@ -145,7 +154,7 @@ export default function Navbar() {
               }`}
             ></div>
             <ul
-              className={`flex max-md:flex-col items-center uppercase md:gap-6 max-md:fixed top-0 ${
+              className={`flex max-md:flex-col items-center uppercase md:gap-3 max-md:fixed top-0 ${
                 isOpen ? 'right-0' : '-right-full'
               } duration-500 max-md:h-[100vh] max-md:w-4/5 bg-white z-[999]`}
             >

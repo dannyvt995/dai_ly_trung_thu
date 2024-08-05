@@ -17,14 +17,14 @@ const NavItem = ({ item, onClose }: { item: any; onClose: any }) => {
       {item.href ? (
         <Link
           href={item.href}
-          className='flex items-center p-4 text-gray-medium cursor-pointer'
+          className='flex items-center p-4 text-gray-medium hover:text-mid-autumn-festival cursor-pointer'
           onClick={() => handleClose()}
         >
           {item.title} {item.subMenu && <IoMdArrowDropdown />}
         </Link>
       ) : (
         <p
-          className='flex items-center p-4 text-gray-medium cursor-pointer'
+          className='flex items-center p-4 text-gray-medium hover:text-mid-autumn-festival cursor-pointer'
           onClick={() => setIsOpenSubmenu(!isOpenSubMenu)}
         >
           {item.title} {item.subMenu && <IoMdArrowDropdown />}
@@ -38,7 +38,7 @@ const NavItem = ({ item, onClose }: { item: any; onClose: any }) => {
                       top-full bg-white md:shadow-lg md:border max-md:pl-4 border-slate-300 text-gray-medium z-[999]`}
         >
           {item.subMenu.map((itemSub: any, index: number) => (
-            <li key={index} className='min-w-52' onClick={() => handleClose()}>
+            <li key={index} className='min-w-52 hover:text-mid-autumn-festival' onClick={() => handleClose()}>
               <Link
                 href={itemSub.href}
                 className='block w-full py-2 px-4 text-nowrap'

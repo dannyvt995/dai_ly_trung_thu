@@ -1,20 +1,32 @@
 import type { Metadata } from 'next'
-import '@/styles/globals.css'
-import '@/styles/lenis.css'
-import '@/styles/config.css'
 import Navbar from '@/components/Navbar'
-import './tailwindcss.css'
+import { CounterStoreProvider } from '@/providers/counter-store-provider'
+import Footer from '@/components/Footer'
+import Widget from '@/components/Widget'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import './global.css'
+import { Open_Sans, Roboto_Mono } from 'next/font/google'
 
 export const metadata: Metadata = {
   title: 'Nhà phân phối bánh trung thu 2024',
   description: 'Nhà phân phối bánh trung thu 2024 tại Sài gòn - Chiếu khấu tốt'
 }
-import { CounterStoreProvider } from '@/providers/counter-store-provider'
-import Footer from '@/components/Footer'
-import Widget from '@/components/Widget'
-import GoogleMap from '@/components/commons/GoogleMap'
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  //👇 Add variable to our object
+  variable: '--font-opensans',
+})
+
+//👇 Configure the object for our second font
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+})
+
 export default function RootLayout({
   children
 }: Readonly<{
@@ -22,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>
+      <body className={openSans.className}>
         <CounterStoreProvider>
           <>
             <Navbar />

@@ -4,7 +4,6 @@ import s from './style.module.css';
 import { shuffleArray } from '@/utils/shuffleArray';
 import data from '@/data/info.json';
 import Link from 'next/link';
-import SliderProducts from '../SliderProducts';
 
 
 type Brand = 'givral' | 'brodard';
@@ -26,7 +25,6 @@ export default function RelatedCombo({ slug }: { slug: Brand }) {
           <h2>Combo 2024</h2>
           <Link href={`/combo/${slug}`}>Xem thêm</Link>
         </div>
-        <SliderProducts data={data_c as any}/>
       </div>
     </section>
   );
